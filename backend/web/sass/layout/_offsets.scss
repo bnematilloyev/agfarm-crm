@@ -1,0 +1,106 @@
+/* ---------------------------------- */
+/* Offsets
+	------------------------------------- */
+$sides: ("b": "bottom", "t": "top", "l": "left", "r": "right");
+@each $prefix, $value in $sides {
+  @for $i from 0 through 100 {
+    .m#{$prefix}- {
+      &#{($i * 1)} {
+        margin-#{$value}: #{($i * 1)}px !important;
+      }
+    }
+    .p#{$prefix}- {
+      &#{($i * 1)} {
+        padding-#{$value}: #{($i * 1)}px !important;
+      }
+    }
+  }
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+@include min-width(481) {
+  .p-sm-0 {
+    padding: 0 !important;
+  }
+  @each $prefix, $value in $sides {
+    @for $i from 0 through 100 {
+      .m#{$prefix}-sm- {
+        &#{($i * 1)} {
+          margin-#{$value}: #{($i * 1)}px !important;
+        }
+      }
+      .p#{$prefix}-sm- {
+        &#{($i * 1)} {
+          padding-#{$value}: #{($i * 1)}px !important;
+        }
+      }
+    }
+  }
+}
+
+@include min-width(769) {
+  .p-md-0 {
+    padding: 0 !important;
+  }
+  @each $prefix, $value in $sides {
+    @for $i from 0 through 100 {
+      .m#{$prefix}-md- {
+        &#{($i * 1)} {
+          margin-#{$value}: #{($i * 1)}px !important;
+        }
+      }
+      .p#{$prefix}-md- {
+        &#{($i * 1)} {
+          padding-#{$value}: #{($i * 1)}px !important;
+        }
+      }
+    }
+  }
+}
+
+@include min-width(1025) {
+  .p-lg-0 {
+    padding: 0 !important;
+  }
+  @each $prefix, $value in $sides {
+    @for $i from 0 through 100 {
+      .m#{$prefix}-lg- {
+        &#{($i * 1)} {
+          margin-#{$value}: #{($i * 1)}px !important;
+        }
+      }
+      .p#{$prefix}-lg- {
+        &#{($i * 1)} {
+          padding-#{$value}: #{($i * 1)}px !important;
+        }
+      }
+    }
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.f-50 {
+  flex: 1 1 100%;
+  @media (min-width: 1366px) {
+    flex: 1 1 50%;
+  }
+}
+
+.f-100 {
+  flex: 1 1 100%;
+  max-width: 100% !important;
+}
+
+.mn-25 {
+  margin-top: -25px;
+}

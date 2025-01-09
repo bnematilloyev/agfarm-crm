@@ -1,0 +1,135 @@
+.profil-info-body {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+
+
+  .profil-info-tr {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 160px;
+  }
+
+  .profil-info-tr :nth-child(1) {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #94A3B8;
+  }
+
+  .profil-info-tr :nth-child(2) {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+
+  }
+}
+
+.profil-name-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    border-radius: 50%;
+  }
+
+  h3, h2 {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.deeds-button {
+  background-color: transparent !important;
+  color: black !important;
+  padding: 7px 15px !important;
+  display: block;
+  box-shadow: none !important;
+  margin-left: 10px !important;
+  border: #D9DBE8 1px solid !important;
+
+  &:hover {
+    border: #008DFF 1px solid !important;
+    background-color: #008DFF1A !important;
+    color: #008DFF !important;
+  }
+}
+
+.proflil-info-update {
+  gap: 35px;
+
+  .form-group {
+    width: 320px;
+  }
+}
+
+.update-profil-content {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .1);
+
+  input, select {
+    background: #F2F4F5 !important;
+    border: none !important;
+
+  }
+
+  .update_save-button {
+    box-shadow: 0px 4px 32px 0px #00BFAF1F;
+    background: #00BFAF;
+    padding: 7px 30px !important;
+  }
+}
+
+.comment-content {
+  .tabs {
+    background-color: transparent !important;
+    box-shadow: none !important;
+
+    a {
+      color: black !important;
+    }
+  }
+
+  .new-tab-class {
+    td {
+      a {
+        color: #008DFF !important;
+      }
+    }
+  }
+
+  .comment-content-tab {
+    padding: 30px !important;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .1);
+
+    tr {
+      background-color: transparent !important;
+    }
+
+    .status_comment {
+      text-align: center;
+      background-color: #FFA51529;
+      color: #FFA515;
+      border: 1px solid #FFA515;
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.new-tab-class {
+  a {
+    color: #008DFF !important;
+  }
+}

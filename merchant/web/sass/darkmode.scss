@@ -1,0 +1,416 @@
+html[data-theme=dark] {
+  body {
+    color: #fff;
+  }
+
+  .header-notifications-dropdown,
+  #header,
+  .header-widget,
+  .small-footer,
+  .dashboard-sidebar,
+  .notification.notice,
+  .tabs-header,
+  .tabs,
+  .modal-content,
+  .fun-fact,
+  .dropdown-menu {
+    background-color: rgb(15, 15, 16);
+  }
+
+
+  #logo,
+  .header-widget,
+  #header .left-side .header-widget,
+  .small-footer,
+  .modal-header {
+    border-color: #333;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  i,
+  p,
+  #navigation ul li a,
+  .user-name,
+  .dashboard-nav ul li a,
+  .custom__table .pagination li a {
+    color: #fff;
+  }
+
+  .dashboard-nav ul li a:hover {
+    color: #00d0ff;
+
+    i {
+      color: #00d0ff;
+    }
+  }
+
+  .close {
+    opacity: 1;
+  }
+
+  .close,
+  a,
+  a i,
+  .dashboard-box .headline h3,
+  .dashboard-box .headline h3 i,
+  .dashboard-nav ul:before,
+  .link-info {
+    color: #00d0ff;
+  }
+
+  .dashboard-box {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .tabs-header .tab__link.active, .tabs-header .tab__link:hover {
+    background-color: rgb(0, 0, 0);
+  }
+
+  .dashboard-nav ul li.active-submenu, .dashboard-nav ul li.active, .dashboard-nav ul li:hover {
+    border-color: #00d0ff;
+  }
+
+
+  .dashboard-content-container {
+    background-color: #202020;
+  }
+
+  .fucts-bg,
+  .dashboard-box {
+    background-color: rgb(34, 37, 41);
+  }
+
+  .input-group-addon,
+  .select2-container--bootstrap .select2-selection,
+  .form-control,
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"] {
+    color: #fff;
+    background-color: #2a2c31;
+    border-color: #2a2c31;
+  }
+
+  .input-daterange .input-group-addon {
+    background-color: #2a2c31;
+    border-color: #2a2c31;
+  }
+
+  .table-striped > tbody > tr {
+    color: #cecece;
+
+    &:nth-of-type(odd) {
+      background-color: rgba(0, 0, 0, 0.075);
+    }
+  }
+
+  .tabs-content:after {
+    box-shadow: none;
+  }
+
+  .table-bordered,
+  .dashboard-box .headline,
+  .table-bordered > tbody > tr > td,
+  .table-bordered > tbody > tr > th,
+  .table-bordered > tfoot > tr > td,
+  .table-bordered > tfoot > tr > th,
+  .table-bordered > thead > tr > td,
+  .table-bordered > thead > tr > th {
+    border-color: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.chart-box {
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.delay {
+  color: white;
+}
+
+.manual {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+#header .right-side {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.dashboard-content-inner {
+  background-color: transparent !important;
+}
+
+.calculator-left {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.installment-box {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.select2-selection {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.box-bg {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+#navigation {
+  ul {
+    ul {
+      background-color: black !important;
+    }
+
+    &.dropdown-nav {
+      ul.dropdown-nav {
+        ul.dropdown-nav li a, li a {
+          color: white !important;
+        }
+      }
+
+      li a {
+        color: white !important;
+      }
+
+      ul.dropdown-nav {
+        ul.dropdown-nav li:hover a, li:hover a {
+          color: #008dff !important;
+        }
+      }
+
+      li:hover a {
+        color: #008dff !important;
+      }
+    }
+  }
+}
+
+
+.customer_tabs {
+  .tabs-header {
+    ul {
+      li {
+        a {
+          color: white !important;
+        }
+      }
+    }
+  }
+}
+
+.tables-content-tab-main {
+  background-color: rgba(255, 255, 255, .04) !important;
+}
+
+.buttons_main a {
+  color: white !important;
+}
+
+.limitStyles {
+  border: 1px solid white !important;
+}
+
+.limitStyles p {
+  border-right: 1px solid white;
+  margin: 0;
+  text-align: center;
+  padding-left: 140px;
+  padding-right: 170px;
+}
+
+.emptysz {
+  color: white;
+}
+
+.detail-view {
+  tbody {
+    tr {
+      th {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.detail-view, .table_customer-new {
+  tbody {
+    tr {
+      td {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.customer_file-view {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.card-light {
+  ul {
+    li {
+      background-color: rgba(255, 255, 255, 0.04) !important;
+    }
+  }
+}
+
+.passports_tab-content {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+  }
+}
+
+.work-table-dButton {
+  background-color: rgba(255, 255, 255, 0.04)
+}
+
+.work_tab-content {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    background-color: transparent;
+  }
+}
+
+.customer-cards {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.table_customer-new {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.status_button-new {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  a {
+    color: white !important;
+  }
+}
+
+.order-index-table {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.common-drop {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-radius: 15px;
+
+  table {
+    thead {
+      tr {
+        th {
+          a {
+            color: #008DFF;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          a {
+            color: #008DFF;
+          }
+        }
+      }
+    }
+  }
+}
+
+.login__block {
+  background-color: #202020 !important;
+}
+
+.login-register-page {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  input, select, .select2-selection, textarea {
+    background-color: #2a2c31 !important;
+    border-color: #2a2c31 !important;
+  }
+
+  input:focus {
+    background-color: white !important;
+    color: black !important;
+  }
+}
+
+.table-view-content, .order-confirmation-background {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.product_create-content {
+  input, select, .select2-selection, textarea {
+    color: #fff !important;
+    background-color: #2a2c31 !important;
+    border-color: #2a2c31 !important;
+  }
+
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.changes-table-crm {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    tbody {
+      tr {
+        background-color: rgba(255, 255, 255, 0.04) !important;
+      }
+    }
+  }
+}
+
+.extra-time__table {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    tbody {
+      tr {
+        background-color: rgba(255, 255, 255, 0.04) !important;
+      }
+    }
+  }
+}
+
+.customer_info_order, .order-product_info {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+
+    thead {
+      th {
+        background-color: rgba(255, 255, 255, 0.04) !important;
+      }
+    }
+
+    tbody {
+      tr {
+        background-color: #2a2c31 !important;
+      }
+    }
+  }
+}
+
+.customer_view_status {
+  background-color: #2a2c31 !important;
+}
+
+.customer-merchant-table, .call-history-table {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    tbody {
+      tr {
+        background-color: rgba(255, 255, 255, 0.04) !important;
+      }
+    }
+  }
+}

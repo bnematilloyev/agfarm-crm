@@ -1,0 +1,672 @@
+
+.order-table_rassrochka {
+  background-color: white;
+  padding: 30px 15px;
+  border-radius: 12px;
+
+  table {
+    border-left: none !important;
+    border-right: none !important;
+
+    tr {
+      background-color: transparent !important;
+
+      td:first-child {
+        border-left: none !important;
+      }
+
+      td:last-child {
+        border-right: none !important;
+      }
+
+      td, th {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 20px;
+
+        a {
+          color: #008DFF;
+          font-size: 14px !important;
+          font-weight: 400 !important;
+          line-height: 20px;
+        }
+      }
+
+      th {
+        a {
+          font-weight: 600 !important;
+          font-size: 16px !important;
+          color: black !important;
+        }
+      }
+    }
+
+    .status_number {
+      font-family: Raleway;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .status_2, .status_5 {
+      border: 1px solid #12A953;
+      color: #12A953 !important;
+      background-color: #12A95329;
+
+    }
+
+    .status_0 {
+      border: 1px solid #FFA515;
+      color: #FFA515 !important;
+      background-color: #FFA51529;
+    }
+
+    .status_-3, .status_-5 {
+      border: 1px solid #E83333;
+      color: #E83333 !important;
+      background-color: #E8333329;
+    }
+
+    .status_1 {
+      border: 1px solid #FE7405;
+      color: #FE7405 !important;
+      background-color: #FE740529;
+    }
+
+    .status_-1 {
+      border: 1px solid #475569;
+      color: #475569 !important;
+      background-color: #47556929;
+    }
+
+    .status_20 {
+      border: 1px solid #008DFF;
+      color: #008DFF;
+      background-color: #008DFF29;
+    }
+
+    .status_15 {
+      color: #00BFAF;
+      border: 1px solid #00BFAF;
+      background-color: #00BFAF29;
+    }
+
+  }
+}
+
+.rassrochka_headline {
+  padding-bottom: 0 !important;
+
+  h2 {
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 32px;
+
+
+  }
+
+  a {
+    padding: 7px 30px !important;
+    font-family: Inter;
+    font-size: 16px !important;
+    font-weight: 500;
+    line-height: 24px;
+
+  }
+}
+
+.status_button-new {
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+
+  a {
+    padding: 7px 30px !important;
+    font-family: Inter;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px;
+    color: black !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+
+  a.active, a:hover {
+    background-color: #008DFF !important;
+    color: white !important;
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  .status_button-new {
+    a {
+      width: 100%;
+    }
+  }
+}
+
+.craet_installment_content {
+  background-color: white;
+  border-radius: 12px;
+
+  #change-amount-content {
+    h4 {
+      font-family: Inter;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+
+    }
+
+    table {
+
+      tr {
+        td {
+          padding: 10px;
+          font-family: Inter;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          border: 1px solid #D9DBE8 !important;
+        }
+      }
+    }
+  }
+}
+
+.create_installment-new {
+  input, .select2-selection {
+    border: none !important;
+    background-color: #F2F4F5;
+    border-right: 8px;
+  }
+
+  .back_btn {
+    padding: 3px 30px;
+    border: 1px solid silver;
+    color: silver;
+    border-radius: 4px;
+
+  }
+}
+
+.buttons_sort_transaction {
+  a {
+    padding: 7px 20px !important;
+  }
+}
+
+.transaction_select {
+  border: none !important;
+  padding: 10px;
+  margin-right: 15px !important;
+  height: auto !important;
+
+  option {
+    padding: 12px !important;
+  }
+}
+
+.transaction_table {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+
+  table {
+    tr {
+      background-color: transparent !important;
+
+      a {
+        color: #008DFF;
+      }
+    }
+  }
+}
+
+.dev-support_new-style {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    tr {
+      background-color: transparent !important;
+
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+.dashboard-transaction {
+  .first-chart-dashboard, .static_chart-dashboard {
+    background-color: white;
+    border-radius: 12px;
+  }
+
+  .headline {
+    h3 {
+      font-family: Inter;
+      font-size: 24px !important;
+      font-weight: 600;
+      line-height: 24px;
+    }
+  }
+
+  .month_info-content {
+    background-color: white;
+    border-radius: 12px;
+    height: 100%;
+
+    .month_info-table {
+      border: none !important;
+
+      tr {
+        background-color: transparent !important;
+        border: none !important;
+      }
+
+    }
+  }
+
+  .payment_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+
+    button {
+      padding: 10px 30px;
+      border-radius: 8px;
+      transition: all 0.5s ease;
+
+      &:nth-child(1) {
+        background-color: #008DFF;
+        color: white;
+      }
+
+      &:hover {
+        background-color: #008DFF;
+        color: white;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+
+  .table_dashboard-info {
+    background-color: white;
+    border-radius: 12px;
+    padding-bottom: 15px;
+    margin-bottom: 50px;
+
+    .btn_datatable_new-design {
+      border: none !important;
+      background-color: #e9f0f8 !important;
+      border-radius: 8px !important;
+      background-image: none !important;
+      margin-right: 10px !important;
+      padding: 7px 30px !important;
+    }
+
+    .dataTables_length, .dt-buttons {
+      float: right !important;
+    }
+
+    .dataTables_filter {
+      float: left !important;
+
+      input {
+        border: 1px solid #D9DBE8 !important;
+        width: 500px;
+        margin: 0 !important;
+        padding: 4px 20px !important;
+        box-shadow: none !important;
+        border-radius: 8px !important;;
+      }
+    }
+
+    .dataTables_paginate {
+      display: none;
+    }
+
+    table {
+      border: none !important;
+
+      tr {
+        background-color: transparent !important;
+
+        td {
+          color: #008DFF !important;
+          background-color: transparent !important;
+          font-size: 14px !important;
+          font-weight: 400;
+          line-height: 24px;
+        }
+      }
+
+      .link-info {
+        a {
+          color: #008DFF !important;
+          background-color: transparent !important;
+          font-size: 14px !important;
+          font-weight: 400;
+          line-height: 24px;
+        }
+      }
+
+      tfoot {
+        border-radius: 0 0 16px 16px !important;
+
+        tr {
+          td {
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.markent-content {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    tr {
+      background-color: transparent !important;
+
+      td, th {
+        a {
+          color: black;
+          background-color: transparent !important;
+          font-size: 14px !important;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .collapse_button-open {
+      font-family: Raleway;
+      font-size: 10px;
+      font-weight: 700;
+      color: #008DFF;
+      display: block;
+      width: 235px;
+    }
+  }
+
+  .status_market_10 {
+    background-color: #12A95329;
+    color: #12A953;
+    border-radius: 8px;
+    border: 1px solid #12A953;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .status_market_20 {
+    background-color: #E8333329;
+    color: #E83333;
+    border-radius: 8px;
+    border: 1px solid #E83333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+}
+
+.market_create-form {
+  background-color: white;
+  border-radius: 12px;
+
+  input, select, textarea, .select2-selection {
+    border: none !important;
+    background-color: #F0F2F5;
+    border-radius: 8px;
+    height: auto;
+  }
+}
+
+.users-table {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    tr {
+      background-color: transparent !important;
+
+      td, th {
+        color: #008DFF;
+        background-color: transparent !important;
+        font-size: 14px !important;
+        font-weight: 400;
+
+        a {
+          color: black;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .status_market_10 {
+    background-color: #12A95329;
+    color: #12A953;
+    border-radius: 8px;
+    border: 1px solid #12A953;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .status_market_20 {
+    background-color: #E8333329;
+    color: #E83333;
+    border-radius: 8px;
+    border: 1px solid #E83333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+}
+
+.index-laws-content {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    tr {
+      background-color: transparent !important;
+
+      td {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #008DFF;
+      }
+
+      td:nth-child(1) {
+        color: black;
+      }
+
+      th {
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+
+  .status_market_10 {
+    background-color: #12A95329;
+    color: #12A953;
+    border-radius: 8px;
+    border: 1px solid #12A953;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .status_market_20 {
+    background-color: #E8333329;
+    color: #E83333;
+    border-radius: 8px;
+    border: 1px solid #E83333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+}
+
+.buttons_update-icon {
+  display: flex;
+  gap: 10px;
+  border: none !important;
+  border-top: 1px solid #ddd !important;
+
+  .button_delete {
+    color: #E83333 !important;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #E833331A !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button_view {
+    color: #FFA515 !important;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #FFA5151A !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button_update {
+    color: #008DFF !important;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #008DFF1A !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.instruction-table {
+  background-color: white;
+  border-radius: 15px;
+
+  table {
+    thead {
+      tr {
+        th, td {
+          a {
+            color: #008DFF;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background-color: transparent !important;
+
+        a {
+          color: #008DFF;
+        }
+      }
+    }
+  }
+}
+
+.unired-box {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 20px;
+
+  pre {
+    background-color: transparent !important;
+    border: none;
+  }
+
+  tbody {
+    tr {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.support-id {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+
+  table {
+    border: none !important;
+    margin-top: 15px;
+
+    tbody {
+      display: flex;
+      gap: 100px;
+      flex-wrap: wrap;
+    }
+
+    tr {
+      background-color: transparent !important;
+      display: flex;
+      flex-direction: column;
+
+
+      th {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #475569;
+        border: none;
+
+      }
+
+      td {
+        border: none !important;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 24px;
+
+      }
+    }
+  }
+}
+
+.update__dev-support, .support__create-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+
+  input, .select2-selection, textarea, select {
+    border: none !important;
+    background-color: #F2F4F5;
+    border-right: 8px;
+    padding: 5px !important;
+  }
+}

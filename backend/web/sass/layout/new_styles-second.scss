@@ -1,0 +1,1318 @@
+.leasing_content {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    tr {
+      background-color: transparent !important;
+
+      td, th {
+        color: #008dff;
+
+        a {
+          color: black;
+        }
+      }
+
+      td:nth-child(1), {
+        color: black !important;
+      }
+    }
+
+    .status_market_10 {
+      background-color: #12A95329;
+      color: #12A953;
+      border-radius: 8px;
+      border: 1px solid #12A953;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+    }
+
+    .status_market_20 {
+      background-color: #E8333329;
+      color: #E83333;
+      border-radius: 8px;
+      border: 1px solid #E83333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+    }
+  }
+
+}
+
+.status_market_10 {
+  background-color: #12A95329;
+  color: #12A953;
+  border-radius: 8px;
+  border: 1px solid #12A953;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.status_market_20 {
+  background-color: #E8333329;
+  color: #E83333;
+  border-radius: 8px;
+  border: 1px solid #E83333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.create_installment-button {
+  background-color: #00BFAF !important;
+  color: white !important;
+  padding: 7px 30px !important;
+}
+
+.user-view_buttons {
+  buuton, a {
+    padding: 7px 20px !important;
+    color: white !important;
+    margin-right: 10px !important;
+  }
+
+  .blue {
+    background-color: #008dff !important;
+  }
+
+  .green {
+    background-color: #00BFAF !important;
+  }
+
+  .red {
+    background-color: #E83333 !important;
+  }
+}
+
+.leasing_create-content, .investor_creat-content, .order-special-update {
+  background-color: white;
+  border-radius: 12px;
+
+  input, .select2-selection, select, textarea {
+    border: none !important;
+    border-radius: 8px !important;
+    background-color: #F0F2F5 !important;
+  }
+
+  .save_button {
+    padding: 7px 30px;
+    background-color: #00BFAF !important;
+  }
+}
+
+.currency_content {
+  .chart-currency {
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+
+  .table-currency {
+    padding-top: 20px;
+    background-color: white;
+    border-radius: 12px;
+
+    table {
+      tr, th {
+        background-color: transparent !important;
+        color: #008dff;
+
+        a {
+          color: black;
+        }
+
+        td:nth-child(1) {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.currency_create-button {
+  background-color: #00BFAF !important;
+  padding: 7px 30px !important;
+  color: white !important;
+}
+
+.create_currency-cantent, .expence_creat-content, .message_create-content, .create_sms-content, .update_sms-content {
+  background-color: white;
+  border-radius: 12px;
+
+  input, select, .select2-selection, textarea {
+    border: none !important;
+    background-color: #F0F2F5;
+    border-radius: 8px;
+    height: auto;
+  }
+
+  select, .select2-selection {
+    padding: 10px;
+
+    .select2-selection__arrow {
+      height: 98% !important;
+    }
+
+    .select2-selection__clear {
+      top: 12px !important;
+    }
+  }
+
+  .submit_button {
+    button {
+      background-color: #00BFAF !important;
+      padding: 7px 30px !important;
+      color: white !important;
+    }
+  }
+}
+
+.leasing_creat_buttons {
+  .update {
+    background-color: #00BFAF !important;
+    padding: 7px 30px !important;
+    color: white;
+  }
+
+  .delete {
+    padding: 7px 30px !important;
+    background-color: #E83333 !important;
+  }
+}
+
+.currency_view-content, .leasing_view-content, .expanse_tag-view-content, .customer-state_view {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    border: none !important;
+
+    tbody {
+      display: flex;
+      gap: 100px;
+      flex-wrap: wrap;
+    }
+
+    tr {
+      background-color: transparent !important;
+      display: flex;
+      flex-direction: column;
+
+
+      th {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #475569;
+        border: none;
+
+      }
+
+      td {
+        border: none !important;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 24px;
+
+      }
+    }
+  }
+}
+
+.expence_creat-button, .sms_creat-button, .message_create-button-index, .message-template_create-btn, .update_smm_button, .create-investor-button {
+  background-color: #00BFAF !important;
+  padding: 7px 30px !important;
+  color: white !important;
+}
+
+.delete_button-message, .delete_sms_button {
+  background-color: #E83333 !important;
+  padding: 7px 30px !important;
+}
+
+.expense_table-new, .sms-content-table {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    tr, th {
+      background-color: transparent !important;
+      color: black;
+
+      a {
+        color: black;
+      }
+
+      td:nth-child(3), {
+        text-align: center;
+        color: #008dff;
+      }
+
+      td:nth-child(4) {
+        color: #008dff;
+        width: 160px !important;
+      }
+
+      td:nth-child(5) {
+        color: #008dff;
+        width: 222px !important;
+      }
+    }
+  }
+}
+
+.expence_view-contet, .massage_view_content {
+  display: block;
+  padding: 30px 20px !important;
+  background-color: white;
+  border-radius: 12px;
+  border: none !important;
+  margin-bottom: 30px;
+
+  table {
+    border: none !important;
+  }
+
+  tbody {
+    display: flex;
+    gap: 90px;
+    flex-wrap: wrap;
+    border: none !important;
+  }
+
+  tr {
+    background-color: transparent !important;
+    display: flex;
+    flex-direction: column;
+
+
+    th {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      color: #475569;
+      border: none !important;
+
+    }
+
+    td {
+      border: none !important;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 24px;
+
+    }
+  }
+}
+
+.expence_view-table {
+  display: block;
+  padding: 30px 12px !important;
+  background-color: white;
+  border-radius: 12px;
+  border: none !important;
+  margin-bottom: 30px;
+
+  tr, th {
+    background-color: transparent !important;
+    color: #008dff;
+
+    a {
+      color: black;
+    }
+
+    td:nth-child(1) {
+      color: black;
+    }
+  }
+}
+
+.expence_view-button {
+  .delete_button {
+    background-color: #E83333 !important;
+    padding: 7px 30px;
+    color: white !important;
+
+  }
+
+  .update_button {
+    background-color: #00BFAF !important;
+    padding: 7px 30px;
+    color: white !important;
+  }
+}
+
+.message-index-content, .message-template_content, .product_content-table, .telegram_message_content, .investor_content-table {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    tr, th {
+      background-color: transparent !important;
+      color: black;
+
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+.seen_telegram_message {
+  padding: 6px 10px !important;
+  background-color: #00BFAF !important;
+  color: white !important;
+  border-radius: 12px;
+}
+
+.product_index-buttons {
+  a {
+    background-color: #00BFAF !important;
+    padding: 7px 30px !important;
+    color: white !important;
+  }
+}
+
+.product_create-content, .expense_update-form {
+  background-color: white;
+  border-radius: 12px;
+
+  input, select, .select2-selection, textarea {
+    border: none !important;
+    background-color: #F0F2F5;
+    border-radius: 8px;
+    height: auto;
+  }
+
+  select, .select2-selection {
+    padding: 10px;
+
+    .select2-selection__arrow {
+      height: 98% !important;
+    }
+
+    .select2-selection__clear {
+      top: 12px !important;
+    }
+  }
+
+  .submit_button {
+    button {
+      background-color: #00BFAF !important;
+      padding: 7px 30px !important;
+    }
+  }
+}
+
+.market_view-table {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    border: none !important;
+
+    tbody {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      tr {
+        background-color: transparent !important;
+        width: 50% !important;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dashed #ddd !important;
+
+        &:nth-child(odd) {
+          border-right: 1px solid #ddd !important;
+          padding-right: 30px;
+
+        }
+
+        &:last-child {
+          border-right: none !important;
+
+        }
+
+        td, th {
+          border: none !important;
+
+
+          button {
+            padding: 0;
+            margin-bottom: 8px;
+          }
+        }
+
+        th {
+          font-size: 14px;
+          font-weight: 400 !important;
+          line-height: 24px;
+          color: #475569;
+        }
+
+        td {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 24px;
+          color: black;
+
+          button {
+            background-color: #00BFAF !important;
+            color: white !important;
+            padding: 4px 10px !important;
+            margin-bottom: 0 !important;
+            margin-left: 10px !important;
+          }
+
+          a {
+            color: #008DFF !important;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+
+.market_view-buttons {
+  a {
+    padding: 7px 30px !important;
+  }
+
+  .update_button {
+    background-color: #00BFAF;
+    color: white !important;
+  }
+
+  .delete_button {
+    background-color: #E83333 !important;
+    color: white !important;
+  }
+}
+
+.market_view_deeds {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  margin: 40px 0;
+
+  .buttons {
+    a {
+      background-color: #008DFF !important;
+      color: white !important;
+      padding: 7px 30px !important;
+    }
+  }
+}
+
+.market_view_info-table {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+
+  table {
+    border: none !important;
+
+    tr, th {
+      background-color: transparent !important;
+      color: #008dff;
+
+      a {
+        color: #008dff;
+      }
+
+      td:nth-child(1) {
+        color: black;
+      }
+    }
+  }
+}
+
+.order_view-headline {
+  padding-bottom: 0 !important;
+
+  a, button {
+    padding: 7px 20px !important;
+    color: white !important;
+    margin-right: 15px;
+  }
+
+  .blue {
+    background-color: #008DFF !important;
+  }
+
+  .dark {
+    background-color: #00BFAF !important;
+
+  }
+}
+
+.order_main_buttons {
+  a, button {
+    padding: 7px 19px !important;
+    color: white !important;
+    margin-right: 15px;
+    border-radius: 8px !important;
+    margin-top: 10px;
+  }
+
+  .red {
+    background-color: #E83333 !important;
+  }
+
+  .blue {
+    background-color: #008DFF !important;
+  }
+
+  .dropdown-menu {
+    li {
+      a {
+        color: black !important;
+      }
+    }
+  }
+}
+
+.customer_info_order {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px !important;
+  margin-bottom: 25px;
+
+  table {
+    border: none !important;
+    box-shadow: none !important;
+
+    tr {
+      background-color: transparent !important;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed #ddd;
+
+      td, th {
+        border: none !important;
+        width: auto;
+      }
+
+      th {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #475569;
+      }
+
+      td {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: black;
+
+        .not-set {
+          color: #E83333 !important;
+          font-style: normal !important;
+        }
+
+        a, button {
+          color: #008DFF;
+        }
+      }
+    }
+
+    tr:last-child {
+      border-bottom: none !important;
+    }
+  }
+}
+
+.product_view_tabs-1 {
+  background-color: white;
+  border-radius: 12px;
+
+  .product_info-table {
+    table {
+      background-color: transparent !important;
+      border: none !important;
+
+      tbody {
+        display: flex;
+        gap: 50px;
+        flex-wrap: wrap;
+
+        tr {
+          background-color: transparent !important;
+          display: flex;
+          flex-direction: column;
+          min-width: 250px;
+
+          th {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #94a3b8;
+          }
+
+          td {
+            font-family: Inter;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: 0px;
+            text-align: left;
+          }
+
+          td, th {
+            border: none !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tables_product-view, .order-product_info, .expanse_tag_table-content {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+
+  table {
+    tr, th {
+      background-color: transparent !important;
+      color: black;
+
+      a {
+        color: #008dff;
+      }
+
+      td:nth-child(1) {
+        color: black;
+      }
+
+      .color-td {
+        color: #008dff;
+      }
+    }
+  }
+}
+
+.order-product_info {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  padding: 15px;
+
+  .card__box {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  table {
+    tr, th {
+      background-color: transparent !important;
+      color: black;
+
+      td {
+        padding: 5px;
+      }
+
+      a {
+        color: #008dff;
+      }
+
+      td:nth-child(1) {
+        color: black;
+      }
+    }
+  }
+}
+
+.order_notification {
+  .notification.notice {
+    background-color: #008DFF1A !important;
+    margin: 0 !important;
+
+    p, strong {
+      color: #008DFF !important;
+
+    }
+  }
+}
+
+.info_order_modal {
+  table {
+    tbody {
+      tr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      tr:nth-child(even) {
+        background-color: #F1F5F9;
+        opacity: 0.8;
+        border-radius: 8px;
+        padding: 6px;
+      }
+    }
+  }
+}
+
+.investor_view_content-table {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px !important;
+  margin-bottom: 30px;
+
+  table {
+    border: none !important;
+
+    tbody {
+      display: flex;
+      gap: 90px;
+      flex-wrap: wrap;
+      border: none !important;
+
+
+      tr {
+        background-color: transparent !important;
+        display: flex;
+        flex-direction: column;
+
+        td:nth-child(odd) {
+          font-size: 16px !important;
+          font-weight: 400 !important;
+          line-height: 20px;
+          color: #475569 !important;
+          border: none !important;
+        }
+
+        td {
+          border: none !important;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 24px;
+
+        }
+      }
+    }
+  }
+}
+
+.tab_content-investor-view {
+  .dashboard-box {
+    background-color: white;
+    border-radius: 12px;
+  }
+
+  .table_view-investor {
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    padding: 25px;
+
+    table {
+      tr, th {
+        background-color: transparent !important;
+        color: black;
+
+        a {
+          color: #008dff;
+        }
+
+        td:nth-child(1) {
+          color: black;
+        }
+
+        .color-td {
+          color: #008dff;
+        }
+      }
+    }
+  }
+}
+
+.report-header-button {
+  a {
+    padding: 7px 20px !important;
+    color: white !important;
+    margin-right: 15px;
+    background-color: #008dff !important;
+  }
+}
+
+.report-table-content {
+  background-color: white;
+  border-radius: 12px;
+
+  table {
+    tr {
+      background-color: transparent !important;
+
+      a, td, th {
+        color: black;
+      }
+    }
+  }
+}
+
+.rank__seller-statistics {
+  display: flex;
+  width: 100%;
+}
+
+.seller__statistics-line {
+  height: 1px;
+  width: 100%;
+}
+
+.plan-text {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+
+.npl-box {
+  background: rgba(0, 141, 255, 0.17);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.colorblack {
+  color: black !important;
+}
+
+.textWhite {
+  tr {
+    th, td {
+      color: black;
+    }
+  }
+}
+
+.nameColor {
+  color: black !important;
+}
+
+.primary-outline-custom {
+  border: 1px solid #008DFF !important;
+  color: #008DFF !important;
+
+
+  &::before {
+    background-color: #0071cc !important;
+
+  }
+
+  &:hover {
+    background-color: #33a4ff !important;
+    color: white !important;
+  }
+}
+
+.outline__default-btn {
+  position: relative;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.default-btn {
+  position: relative;
+  border: none;
+  z-index: 1;
+  font-size: 14px;
+  padding: 14px 20px;
+  color: #fff;
+  border-radius: 10px;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:hover {
+    color: #fff !important;
+
+    &::before {
+      transform: scaleX(1);
+      color: #fff !important;
+      z-index: -1;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 10px;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleX(0);
+  }
+}
+
+.order-confirmation-page p {
+  margin-top: 26px;
+}
+
+.datepicker {
+  z-index: 1000 !important;
+}
+
+.dashboard__info-text {
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .dashboard__info-text {
+    font-size: 10px !important;
+  }
+}
+
+.createMessage {
+  background-color: white !important;
+}
+
+.update-template {
+  background-color: white;
+  border-radius: 20px;
+}
+
+.table-scroll {
+  overflow-y: scroll !important;
+}
+
+.customerTabs {
+  display: flex;
+  gap: 10px !important;
+}
+
+.scroring_table_crm {
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+
+  table {
+    thead {
+      th {
+        a {
+          color: #008DFF !important;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background-color: white !important;
+
+        td {
+          a {
+            color: #008DFF !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.katm-response_table {
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+
+  table {
+    thead {
+      th {
+        a {
+          color: #008DFF !important;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background-color: white !important;
+
+        td {
+          a {
+            color: #008DFF !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dashboard__npl-flex {
+  flex-wrap: nowrap;
+}
+
+@media only screen and (max-width: 568px) {
+  .dashboard__npl-flex {
+    flex-wrap: wrap;
+  }
+}
+.manual-company{
+  background-color: white !important;
+  border-radius: 15px !important;
+  padding: 15px !important;
+}
+.all-btn-style{
+  background-color: #00BFAF !important;
+  padding: 8px 18px !important;
+}
+.delete-btn-all{
+  padding: 9px !important;
+}
+.call-history-crm{
+  background-color: white !important;
+  border-radius: 15px;
+  margin-top: 30px !important;
+  padding: 15px !important;
+}
+.user-seans-table{
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+  table{
+    thead{
+      th{
+        a{
+          color: #008DFF !important;
+        }
+      }
+    }
+    tbody{
+      tr{
+        background-color: white !important;
+      }
+    }
+  }
+}
+.customer-location__table,.customer-img-table,.customer-comment-table,.customer-position__table,.customers-bank-table{
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+  table{
+    thead{
+      th{
+        a{
+          color: #008DFF !important;
+        }
+      }
+    }
+    tbody{
+      tr{
+        background-color: white !important;
+        td{
+          a{
+            color: #008DFF !important;
+          }
+        }
+      }
+    }
+  }
+}
+.invest-push-money{
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+  table{
+    thead{
+      th{
+        a{
+          color: #008DFF !important;
+        }
+      }
+    }
+    tbody{
+      tr{
+        background-color: white !important;
+      }
+    }
+  }
+}
+.program-table-crm,.user-locations__table,.order-akt-table,.ofert-table-crm,.district-table_crm,.mosysklad-table-folder{
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+  table{
+    thead{
+      th{
+        a{
+          color: #008DFF !important;
+        }
+      }
+    }
+    tbody{
+      tr{
+        background-color: white !important;
+      }
+    }
+  }
+}
+.mib-docs__table,.market-flow-table,.KPI__table,.katm_partner__table,.investor_invest-table,.imeis-table_crm,
+.hybrid-request-table,.hybrid-mails__table{
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+  table{
+    thead{
+      th{
+        a{
+          color: #008DFF !important;
+        }
+      }
+    }
+    tbody{
+      tr{
+        background-color: white !important;
+        td{
+          a{
+            color: #008DFF !important;
+          }
+        }
+      }
+    }
+  }
+}
+.qr_button{
+  background-color: grey !important;
+}
+.phone-crm-table{
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+}
+.phone-section-crm{
+  padding: 20px;display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+.report-text{
+  cursor: auto !important;
+  background-color: #00bfaf !important;
+  border-radius: 7px;
+  color: white !important;
+  padding: 5px !important;
+  margin-top: -40px;
+  margin-left: -7px;
+}
+.report-table_crm{
+  padding: 12px;
+  width: 50% ;
+  background-color: white;
+  border-radius: 12px;
+  @media screen and (max-width: 1100px) {
+    width: 100% ;
+  }
+
+  table {
+    border: none !important;
+
+    tbody {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      tr {
+        background-color: transparent !important;
+        width: 50% !important;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dashed #ddd !important;
+
+        &:nth-child(odd) {
+          //border-right: 1px solid #ddd !important;
+          //padding-right: 30px;
+
+        }
+
+        &:last-child {
+          border-right: none !important;
+
+        }
+
+        td, th {
+          border: none !important;
+
+
+          button {
+            padding: 0;
+            margin-bottom: 8px;
+          }
+        }
+
+        th {
+          font-size: 14px;
+          font-weight: 400 !important;
+          line-height: 24px;
+          color: #475569;
+        }
+
+        td {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 24px;
+          color: black;
+
+          button {
+            background-color: #00BFAF !important;
+            color: white !important;
+            padding: 4px 10px !important;
+            margin-bottom: 0 !important;
+            margin-left: 10px !important;
+          }
+
+          a {
+            color: #008DFF !important;
+          }
+        }
+
+      }
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    width: 100% ;
+  }
+.table_leasing {
+  tbody {
+    tr {
+      width: 100% !important;
+    }
+  }
+}
+}
+.report-deeds-table{
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  @media screen and (max-width: 1100px) {
+     display: block;
+  }
+}
+.report-btn{
+  background-color: #00bfaf !important;
+  padding: 7px;
+  color: white;
+  border-radius: 7px;
+}
+
+
+
+

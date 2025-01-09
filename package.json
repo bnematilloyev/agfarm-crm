@@ -1,0 +1,40 @@
+{
+  "name": "workify",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/githubjeka/yii2-rest.svg)](https://travis-ci.org/githubjeka/yii2-rest)",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "gulp leasing": "gulp leasing",
+    "gulp investor": "gulp investor",
+    "gulp lawyer": "gulp lawyer",
+    "gulp pay": "gulp pay",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/Husayn_Hasanov/workify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-notify": "^3.2.0",
+    "browser-sync": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.43.2"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/Husayn_Hasanov/workify/issues"
+  },
+  "homepage": "https://gitlab.com/Husayn_Hasanov/workify#readme",
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.11"
+  }
+}

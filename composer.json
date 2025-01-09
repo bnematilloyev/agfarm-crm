@@ -1,0 +1,90 @@
+{
+  "name": "githubjeka/rest-yii2",
+  "description": "Yii 2 Rest Api Template",
+  "keywords": [
+    "yii2",
+    "rest",
+    "application template",
+    "api"
+  ],
+  "homepage": "https://github.com/githubjeka/yii2-rest",
+  "type": "project",
+  "license": "BSD-4-Clause",
+  "authors": [
+    {
+      "name": "Evgeniy Tkachenko",
+      "email": "et.coder@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/githubjeka/yii2-rest/issues",
+    "source": "https://github.com/githubjeka/yii2-rest"
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.1",
+    "yiisoft/yii2": "~2.0.6",
+    "yiisoft/yii2-bootstrap": "~2.0.0",
+    "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
+    "dmstr/yii2-adminlte-asset": "^2.1",
+    "sultonov/yii2-cropper": "dev-master",
+    "kartik-v/yii2-widget-select2": "@dev",
+    "bower-asset/simple-ajax-uploader": "2.6.1",
+    "kartik-v/yii2-widget-touchspin": "dev-master",
+    "2amigos/yii2-file-upload-widget": "~1.0",
+    "unclead/yii2-multiple-input": "~2.0",
+    "2amigos/yii2-date-picker-widget": "~1.0",
+    "phpoffice/phpexcel": "dev-develop",
+    "phpoffice/phpword": "dev-master",
+    "phpoffice/phpspreadsheet": "^1.8",
+    "kartik-v/yii2-widget-depdrop": "dev-master",
+    "kartik-v/yii2-widget-datetimepicker": "dev-master",
+    "yiisoft/yii2-bootstrap4": "*",
+    "robregonm/yii2-pdf": "dev-master",
+    "ext-json": "*",
+    "kartik-v/yii2-widget-colorinput": "*",
+    "kartik-v/yii2-widget-rangeinput": "dev-master",
+    "ext-curl": "*",
+    "himiklab/yii2-recaptcha-widget": "*",
+    "kartik-v/yii2-money": "*",
+    "kartik-v/yii2-date-range": "dev-master",
+    "yii2mod/yii2-swagger": "*",
+    "ext-zip": "*",
+    "ext-simplexml": "*",
+    "firebase/php-jwt": "^6.4",
+    "ext-zlib": "*",
+    "yiisoft/yii2-jui": "^2.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.0.0",
+    "yiisoft/yii2-gii": "~2.0.0",
+    "yiisoft/yii2-faker": "~2.0.0",
+    "codeception/base": "^2.2.3",
+    "codeception/verify": "~0.3.1",
+    "codeception/codeception": "^4.0",
+    "codeception/module-asserts": "^1.0",
+    "codeception/module-yii2": "^1.0",
+    "codeception/module-filesystem": "^1.0",
+    "symfony/browser-kit": ">=2.7 <=4.2.4"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    },
+    "preferred-install": "dist",
+    "platform": {
+      "php": "7.3.0"
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+.action__counter,.answer-table,.applications__table,.returned__customer,.card-scoring__table,.customer-debt-table,
+.courts__table{
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+  table{
+    thead{
+      th{
+      a{
+        color: #008DFF !important;
+      }
+      }
+    }
+    tbody{
+      tr{
+        background-color: white !important;
+        td{
+          a{
+            color: #008DFF !important;
+          }
+        }
+      }
+    }
+  }
+}
+.expense__investor_table,.lawyer-order__table,.leasing-market__table,.transaction__tablecrm,.tag__table,
+.sms___counter{
+  background-color: white !important;
+  border-radius: 15px;
+  padding: 15px;
+  table{
+    thead{
+      th{
+        a{
+          color: #008DFF !important;
+        }
+      }
+    }
+    tbody{
+      tr{
+        background-color: white !important;
+        td{
+          a{
+            color: #008DFF !important;
+          }
+        }
+      }
+    }
+  }
+}
+.company-content{
+  table{
+    tbody{
+      tr{
+        @media screen and (max-width: 992px) {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+
+
+

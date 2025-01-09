@@ -1,0 +1,4 @@
+/debug/index.data
+/logs/app.log
+*
+!.gitignore

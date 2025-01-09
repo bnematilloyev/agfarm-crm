@@ -1,0 +1,679 @@
+html[data-theme=dark] {
+  body {
+    color: #fff;
+  }
+
+  .header-notifications-dropdown,
+  #header,
+  .header-widget,
+  .small-footer,
+  .dashboard-sidebar,
+  .notification.notice,
+  .tabs-header,
+  .tabs,
+  .modal-content,
+  .fun-fact,
+  .dropdown-menu {
+    background-color: rgb(15, 15, 16);
+  }
+
+
+  #logo,
+  .header-widget,
+  #header .left-side .header-widget,
+  .small-footer,
+  .modal-header {
+    border-color: #333;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  i,
+  p,
+  #navigation ul li a,
+  .user-name,
+  .dashboard-nav ul li a,
+  .custom__table .pagination li a {
+    color: #fff;
+  }
+
+  .dashboard-nav ul li a:hover {
+    color: #00d0ff;
+
+    i {
+      color: #00d0ff;
+    }
+  }
+
+  .close {
+    opacity: 1;
+  }
+
+  .close,
+  a,
+  a i,
+  .dashboard-box .headline h3,
+  .dashboard-box .headline h3 i,
+  .dashboard-nav ul:before,
+  .link-info {
+    color: #00d0ff;
+  }
+
+  .dashboard-box {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .tabs-header .tab__link.active, .tabs-header .tab__link:hover {
+    background-color: rgb(0, 0, 0);
+  }
+
+  .dashboard-nav ul li.active-submenu, .dashboard-nav ul li.active, .dashboard-nav ul li:hover {
+    border-color: #00d0ff;
+  }
+
+
+  .dashboard-content-container {
+    background-color: #202020;
+  }
+
+  .fucts-bg,
+  .dashboard-box {
+    background-color: rgb(34, 37, 41);
+  }
+
+  .input-group-addon,
+  .select2-container--bootstrap .select2-selection, .select2-dropdown,
+  .form-control,
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"] {
+    color: #fff;
+    background-color: #2a2c31;
+    border-color: #2a2c31;
+  }
+
+  .input-daterange .input-group-addon {
+    background-color: #2a2c31;
+    border-color: #2a2c31;
+  }
+
+  .table-striped > tbody > tr {
+    color: #cecece;
+
+    &:nth-of-type(odd) {
+      background-color: rgba(0, 0, 0, 0.075);
+    }
+  }
+
+  .tabs-content:after {
+    box-shadow: none;
+  }
+
+  .table-bordered,
+  .dashboard-box .headline,
+  .table-bordered > tbody > tr > td,
+  .table-bordered > tbody > tr > th,
+  .table-bordered > tfoot > tr > td,
+  .table-bordered > tfoot > tr > th,
+  .table-bordered > thead > tr > td,
+  .table-bordered > thead > tr > th {
+    border-color: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.manual,
+.support_class,
+.creat_support-input,
+.request_exel-new,
+.update-profil-content,
+.comment-content-tab,
+.index-bg, .company-contentc,
+.maqomlar_card, .chart-currency {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.request_button {
+  color: white !important;
+}
+
+.deeds-button {
+  color: #00d0ff !important;
+}
+
+.update-profil-content {
+  input, select {
+    background-color: rgba(0, 0, 0, 0.075) !important;
+  }
+}
+
+.comment-content-tab {
+  a {
+    color: #cecece !important;
+  }
+}
+
+.maqomlar_card {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  small {
+    color: #cecece !important;
+  }
+
+  div {
+
+    background-color: rgba(255, 255, 255, 0.04) !important
+  }
+
+  .user__name {
+    color: white !important;
+  }
+}
+
+.customer_tabs {
+  .tabs-header {
+    ul {
+      li {
+        a {
+          color: white !important;
+        }
+      }
+    }
+  }
+}
+
+.comment-update, .tabs-content, .company-content, .leasing_content, .leasing_create-content, .users-table {
+
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  .company_hesh {
+    background-color: #2a2c31 !important;;
+  }
+
+  input, select, textarea {
+    background-color: #2a2c31 !important;
+  }
+}
+
+.rassrochka_headline {
+  a {
+    color: white !important;
+  }
+}
+
+.transaction_table,
+.currency_view-content, .leasing_view-content, .currency_view-content,
+.leasing_view-content, .market_view-table, .market_view_info-table, .expanse_tag-view-content, .customer-state_view {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    a, td, th {
+      color: white !important;
+    }
+  }
+}
+
+.customer_index-content {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    th {
+      a {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.status_button-new, {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  a {
+    color: white !important;
+  }
+}
+
+.market_view_deeds {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.fa.fa-plus {
+  color: black !important;
+}
+
+.market_create-form, .markent-content,
+.table_dashboard-info, .table-currency,
+.massage_view_content, .expence_view-contet, .expence_view-table {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  input, select, .select2-selection, textarea {
+    background-color: #2a2c31;
+    color: white;
+  }
+
+  table {
+    th {
+      color: white !important;
+
+      a {
+        color: white !important;
+      }
+
+      a {
+        color: #008dff;
+      }
+    }
+  }
+}
+
+.dev-support_new-style, .expense_table-new, .message-template_content,
+.tables-content-tab-main, .index-laws-content, .message-index-content, .expence_creat-content, .table_view-investor {
+  input, select, .select2-selection, textarea {
+    color: #fff !important;
+    background-color: #2a2c31 !important;
+    border-color: #2a2c31 !important;
+  }
+
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    a, td, th {
+      color: white !important;
+    }
+  }
+}
+
+.product_create-content, .investor_creat-content, .craet_installment_content, .customer-state_form, .leasing-state_form, .order-special-update {
+  input, select, .select2-selection, textarea {
+    color: #fff !important;
+    background-color: #2a2c31 !important;
+    border-color: #2a2c31 !important;
+  }
+
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    a, td, th {
+      color: white !important;
+    }
+  }
+}
+
+.product_content-table, .sms-content-table, .investor_content-table, .customer_new-table, .investor_view_content-table,
+.user_dashboard-table-content, .table_order-late, .notification-comment-content, .cusromer_work-new {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    th {
+      a {
+        color: white !important;
+      }
+    }
+
+    a, td, th {
+      color: white !important;
+    }
+  }
+}
+
+#navigation {
+  ul {
+    ul {
+      background-color: black !important;
+    }
+
+    &.dropdown-nav {
+      ul.dropdown-nav {
+        ul.dropdown-nav li a, li a {
+          color: white !important;
+        }
+      }
+
+      li a {
+        color: white !important;
+      }
+
+      ul.dropdown-nav {
+        ul.dropdown-nav li:hover a, li:hover a {
+          color: #008dff !important;
+        }
+      }
+
+      li:hover a {
+        color: #008dff !important;
+      }
+    }
+  }
+}
+
+.product_create-content, .expense_update-form {
+  input, select, .select2-selection, textarea {
+    color: #fff !important;
+    background-color: #2a2c31 !important;
+    border-color: #2a2c31 !important;
+  }
+
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.table_tabs_view, .customer_file-view, .customer-cards, .mib_table-info, .org_data-table,
+.log_page-content, .expanse_tag_table-content, .product_view_tabs-1, .tables_product-view {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.card-light {
+  ul {
+    li {
+      background-color: rgba(255, 255, 255, 0.04) !important;
+    }
+  }
+}
+
+.report-table-content {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    a, td, th {
+      color: white;
+    }
+
+    .colorblack {
+      color: white !important;
+    }
+  }
+}
+
+.customer_info_order, .order-product_info {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    background-color: transparent !important;
+
+    th {
+      a {
+        color: white !important;
+      }
+    }
+
+    a, td, th {
+      color: white !important;
+    }
+  }
+}
+
+.order-table_rassrochka {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    background-color: transparent !important;
+
+    tr {
+      background-color: transparent !important;
+
+      th {
+        a {
+          color: #008dff !important;
+        }
+      }
+    }
+  }
+
+}
+
+.login__block {
+  background-color: #202020 !important;
+}
+
+.login-register-page {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  input, select, .select2-selection, textarea {
+    background-color: #2a2c31 !important;
+    border-color: #2a2c31 !important;
+  }
+
+  input:focus {
+    color: black !important;
+  }
+}
+
+#breadcrumbs {
+  ul {
+    li {
+      a {
+        color: white !important;
+
+      }
+    }
+
+    li.active {
+      color: white !important;
+    }
+  }
+}
+
+.dashboard_backend .table_dashboard-bg table a {
+  color: #008dff !important;
+}
+
+.leasing_content table tr th a {
+  color: #008dff !important;
+}
+
+
+.telegram_message_content {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    tr {
+      th {
+        color: white;
+
+        a {
+          color: #008dff;
+        }
+      }
+    }
+  }
+}
+
+
+.edit-table-class {
+  background-color: #222529;
+}
+
+.textWhite {
+  color: white !important;
+}
+
+.colorblack {
+  th {
+    color: white !important;
+  }
+}
+
+.nameColor {
+  color: white !important;
+}
+
+.main-index-tables {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  table {
+    tr {
+      th, td {
+        color: white !important;
+
+        a {
+          color: #008dff;
+        }
+      }
+    }
+  }
+}
+
+.form-create-update, .create_currency-cantent {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  input, select, .select2-selection, textarea {
+    background-color: #2a2c31 !important;
+    border-color: #2a2c31 !important;
+  }
+}
+
+.table-view-content, .installment_ul, .listpage_view {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+
+  th {
+    color: white !important;
+  }
+}
+
+.longest-serving_employee {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.customer_debt-index,.report-table-dark {
+
+  table {
+    tr {
+      th, td {
+        color: white !important;
+
+        a {
+          color: #008dff;
+        }
+      }
+    }
+  }
+}
+.report-index-dark{
+  table {
+    tr {
+      th, td {
+        color: white !important;
+
+        a {
+          color: #008dff;
+        }
+      }
+      .green, .red{
+        color: black !important;
+      }
+    }
+  }
+}
+.user-menu-small-nav img {
+  filter: invert(66%) sepia(100%) saturate(300%) hue-rotate(154deg);
+}
+.customer-state_content, .leasing-state_content{
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.instruction-table, .order-confirmation-background{
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+.createMessage{
+  background-color: #222529 !important;
+}
+.btn-darkmode-color{
+  color: white !important;
+}
+.unired-box{
+  background-color: rgba(255, 255, 255, .04);
+  margin-bottom: 20px ;
+  pre{
+    background-color: transparent !important;
+    border:none;
+    color: white;
+  }
+}
+
+.partnerCreate{
+  color: white !important;
+}
+.showing-user{
+  background-color: rgba(255, 255, 255, .04) !important;
+  border-radius: 12px;
+}
+.support-id{
+  background-color: rgba(255, 255, 255, .04) !important;
+  padding: 20px;
+  border-radius: 12px;
+}
+.scroring_table_crm{
+  background-color: rgba(255, 255, 255, .04) !important;
+  table{
+    tbody{
+      tr{
+        background-color: rgba(255, 255, 255, .04) !important;
+      }
+    }
+  }
+}
+.katm-response_table,.expense__investor_table{
+  background-color: rgba(255, 255, 255, .04) !important;
+  table{
+    tbody{
+      tr{
+        background-color: rgba(255, 255, 255, .04) !important;
+      }
+    }
+  }
+}
+
+.manual-company{
+  background-color: rgba(255, 255, 255, .04) !important;
+}
+.call-history-crm{
+  background-color: rgba(255, 255, 255, .04) !important;
+}
+.user-seans-table,.KPI__table{
+  background-color: rgba(255, 255, 255, .04) !important;
+  table{
+    tbody{
+      tr{
+        background-color: rgba(255, 255, 255, .04) !important;
+      }
+    }
+  }
+}
+.invest-push-money,.program-table-crm,.user-locations__table,.order-akt-table,.ofert-table-crm,.district-table_crm,.mosysklad-table-folder,.mib-docs__table,
+.market-flow-table,.katm_partner__table{
+  background-color: rgba(255, 255, 255, .04) !important;
+  table{
+    tbody{
+      tr{
+        background-color: rgba(255, 255, 255, .04) !important;
+      }
+    }
+  }
+}
+.investor_invest-table,.imeis-table_crm,.hybrid-request-table,.action__counter,.answer-table,.applications__table,
+.returned__customer,.card-scoring__table,.customer-debt-table{
+  background-color: rgba(255, 255, 255, .04) !important;
+  table{
+    tbody{
+      tr{
+        background-color: rgba(255, 255, 255, .04) !important;
+      }
+    }
+  }
+}
+.courts__table,.lawyer-order__table,.leasing-market__table,.transaction__tablecrm,.tag__table,.sms___counter{
+  background-color: rgba(255, 255, 255, .04) !important;
+  table{
+    tbody{
+      tr{
+        background-color: rgba(255, 255, 255, .04) !important;
+      }
+    }
+  }
+}
+.support__create-content{
+  background-color: rgba(255, 255, 255, .04) !important;
+}
+
+
+
+
+

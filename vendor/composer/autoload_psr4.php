@@ -23,6 +23,7 @@ return array(
     'unclead\\multipleinput\\' => array($vendorDir . '/unclead/yii2-multiple-input/src'),
     'sultonov\\cropper\\' => array($vendorDir . '/sultonov/yii2-cropper'),
     'setasign\\Fpdi\\' => array($vendorDir . '/setasign/fpdi/src'),
+    'sadovojav\\ckeditor\\' => array($vendorDir . '/sadovojav/yii2-ckeditor'),
     'robregonm\\pdf\\' => array($vendorDir . '/robregonm/yii2-pdf'),
     'rmrevin\\yii\\fontawesome\\' => array($vendorDir . '/rmrevin/yii2-fontawesome'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),

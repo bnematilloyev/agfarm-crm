@@ -55,7 +55,20 @@ $this->params['breadcrumbs'][] = $this->title;
             'meta_json_uz',
             'meta_json_ru',
             'meta_json_en',
-            'categories',
+            [
+                'attribute' => 'categories',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if (is_array($model->categories)) {
+                        $categoriesArray = $model->categories;
+                    } else {
+                        $decodedCategories = Html::decode((string)$model->categories);
+                        $categoriesArray = explode(',', $decodedCategories);
+                    }
+                    return implode(', ', $categoriesArray);
+                }
+            ],
+
             'similar',
             'actual_price',
             'old_price',

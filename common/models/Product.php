@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "product".
@@ -22,7 +23,7 @@ use Yii;
  * @property int $sort
  * @property string|null $slug
  * @property string|null $main_image
- * @property string|null $images
+ * @property string|null $imageField
  * @property string|null $video
  * @property string|null $meta_json_uz
  * @property string|null $meta_json_ru
@@ -48,6 +49,7 @@ use Yii;
  * @property ProductCollection[] $productCollections
  * @property User $updaterAdmin
  * @property string $print_id
+ * @property $productIds
  */
 class Product extends BaseTimestampedModel
 {
@@ -67,22 +69,22 @@ class Product extends BaseTimestampedModel
     public function rules()
     {
         return [
-            [['name_uz', 'name_ru', 'name_en', 'description_uz', 'description_ru', 'description_en', 'state', 'slug', 'main_image', 'images', 'video', 'meta_json_uz', 'meta_json_ru', 'meta_json_en', 'categories', 'similar', 'actual_price', 'old_price', 'cost', 'trust_percent', 'updater_admin_id', 'price_changed_at', 'stat', 'created_at', 'updated_at'], 'default', 'value' => null],
+            [['name_uz', 'name_ru', 'name_en', 'description_uz', 'description_ru', 'description_en', 'state', 'slug', 'main_image', 'imageField', 'video', 'meta_json_uz', 'meta_json_ru', 'meta_json_en', 'categories', 'similar', 'actual_price', 'old_price', 'cost', 'trust_percent', 'updater_admin_id', 'price_changed_at', 'stat', 'created_at', 'updated_at'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 10],
             [['sort'], 'default', 'value' => 0],
             [['currency_id'], 'default', 'value' => 1],
-            [['company_id', 'category_id', 'brand_id', 'creator_id'], 'required'],
+//            [['company_id', 'category_id', 'brand_id', 'creator_id'], 'required'],
             [['company_id', 'category_id', 'brand_id', 'state', 'status', 'sort', 'currency_id', 'trust_percent', 'creator_id', 'updater_admin_id', 'price_changed_at', 'created_at', 'updated_at'], 'default', 'value' => null],
             [['company_id', 'category_id', 'brand_id', 'state', 'status', 'sort', 'currency_id', 'trust_percent', 'creator_id', 'updater_admin_id', 'price_changed_at', 'created_at', 'updated_at'], 'integer'],
             [['description_uz', 'description_ru', 'description_en'], 'string'],
-            [['images', 'video', 'categories', 'similar', 'stat'], 'safe'],
+            [['imageField', 'video', 'categories', 'similar', 'stat'], 'safe'],
             [['actual_price', 'old_price', 'cost'], 'number'],
-            [['name_uz', 'name_ru', 'name_en', 'slug', 'main_image', 'meta_json_uz', 'meta_json_ru', 'meta_json_en'], 'string', 'max' => 255],
-            [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => Company::class, 'targetAttribute' => ['company_id' => 'id']],
-            [['brand_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProductBrand::class, 'targetAttribute' => ['brand_id' => 'id']],
-            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProductCategory::class, 'targetAttribute' => ['category_id' => 'id']],
-            [['creator_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['creator_id' => 'id']],
-            [['updater_admin_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['updater_admin_id' => 'id']],
+            [['name_uz', 'name_ru', 'name_en', 'slug', 'main_image', 'meta_json_uz', 'meta_json_ru', 'meta_json_en'], 'string', 'max' => 500],
+//            [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => Company::class, 'targetAttribute' => ['company_id' => 'id']],
+//            [['brand_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProductBrand::class, 'targetAttribute' => ['brand_id' => 'id']],
+//            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProductCategory::class, 'targetAttribute' => ['category_id' => 'id']],
+//            [['creator_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['creator_id' => 'id']],
+//            [['updater_admin_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['updater_admin_id' => 'id']],
         ];
     }
 
@@ -103,12 +105,12 @@ class Product extends BaseTimestampedModel
             'description_uz' => Yii::t('app', 'Description Uz'),
             'description_ru' => Yii::t('app', 'Description Ru'),
             'description_en' => Yii::t('app', 'Description En'),
-            'state' => Yii::t('app', 'State'),
-            'status' => Yii::t('app', 'Status'),
+            'state' => Yii::t('app', 'Skladdagi holati'),
+            'status' => Yii::t('app', 'Saytdagi holati'),
             'sort' => Yii::t('app', 'Sort'),
             'slug' => Yii::t('app', 'Slug'),
             'main_image' => Yii::t('app', 'Main Image'),
-            'images' => Yii::t('app', 'Images'),
+            'imageField' => Yii::t('app', 'Images'),
             'video' => Yii::t('app', 'Video'),
             'meta_json_uz' => Yii::t('app', 'Meta Json Uz'),
             'meta_json_ru' => Yii::t('app', 'Meta Json Ru'),
@@ -174,10 +176,10 @@ class Product extends BaseTimestampedModel
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getProductCollections()
-    {
-        return $this->hasMany(ProductCollection::class, ['product_id' => 'id']);
-    }
+//    public function getProductCollections()
+//    {
+//        return $this->hasMany(ProductCollection::class, ['product_id' => 'id']);
+//    }
 
     /**
      * Gets query for [[UpdaterAdmin]].
@@ -194,4 +196,8 @@ class Product extends BaseTimestampedModel
         return 'T' . $this->id;
     }
 
+    public function getProductIds()
+    {
+        return ArrayHelper::map(Product::find()->all(), 'id', 'name_' . Yii::$app->language);
+    }
 }

@@ -47,7 +47,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         return $img;
                     },
                     'filter' => false,
-                    'label' => false
                 ],
                 [
                     'headerOptions' => ['width' => '100'],
@@ -126,13 +125,13 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::dropDownList(
                             'status',
                             $model->status,
-                            \common\models\constants\ProductConstants::getStatusOnAndOff(),
+                            \common\models\constants\ProductStatus::getStatusOnAndOff(),
                             [
                                 'onchange' => 'changeStatus(' . $model->id . ', this)'
                             ]
                         );
                     },
-                    'filter' => \common\models\constants\ProductConstants::getStatusOnAndOff(),
+                    'filter' => \common\models\constants\ProductStatus::getStatusOnAndOff(),
 
 //                    'visible' => (Yii::$app->user->identity->role != RoleTypes::CALL_CENTER)
                 ],

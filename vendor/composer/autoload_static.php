@@ -52,6 +52,7 @@ class ComposerStaticInit46908467218bc5ed0463337ce52a48f3
         array (
             'sultonov\\cropper\\' => 17,
             'setasign\\Fpdi\\' => 14,
+            'sadovojav\\ckeditor\\' => 19,
         ),
         'r' => 
         array (
@@ -242,6 +243,10 @@ class ComposerStaticInit46908467218bc5ed0463337ce52a48f3
         'setasign\\Fpdi\\' => 
         array (
             0 => __DIR__ . '/..' . '/setasign/fpdi/src',
+        ),
+        'sadovojav\\ckeditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sadovojav/yii2-ckeditor',
         ),
         'robregonm\\pdf\\' => 
         array (

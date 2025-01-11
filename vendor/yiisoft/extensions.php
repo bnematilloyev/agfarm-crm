@@ -266,4 +266,13 @@ return array (
       '@yii/gii' => $vendorDir . '/yiisoft/yii2-gii/src',
     ),
   ),
+  'sadovojav/yii2-ckeditor' => 
+  array (
+    'name' => 'sadovojav/yii2-ckeditor',
+    'version' => 'dev-master',
+    'alias' => 
+    array (
+      '@sadovojav/ckeditor' => $vendorDir . '/sadovojav/yii2-ckeditor',
+    ),
+  ),
 );

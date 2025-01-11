@@ -3947,42 +3947,41 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PHPWord.git",
-                "reference": "f24aabca176858b5b549d7425e33fa5cde30e0a9"
+                "reference": "639f39635ab2c84a5e75b23a9e0c0127a61a320a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PHPWord/zipball/f24aabca176858b5b549d7425e33fa5cde30e0a9",
-                "reference": "f24aabca176858b5b549d7425e33fa5cde30e0a9",
+                "url": "https://api.github.com/repos/PHPOffice/PHPWord/zipball/639f39635ab2c84a5e75b23a9e0c0127a61a320a",
+                "reference": "639f39635ab2c84a5e75b23a9e0c0127a61a320a",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
+                "ext-gd": "*",
                 "ext-json": "*",
                 "ext-xml": "*",
+                "ext-zip": "*",
                 "php": "^7.1|^8.0",
                 "phpoffice/math": "^0.2"
             },
             "require-dev": {
                 "dompdf/dompdf": "^2.0 || ^3.0",
-                "ext-gd": "*",
                 "ext-libxml": "*",
-                "ext-zip": "*",
                 "friendsofphp/php-cs-fixer": "^3.3",
-                "mpdf/mpdf": "^8.1",
+                "mpdf/mpdf": "^7.0 || ^8.0",
                 "phpmd/phpmd": "^2.13",
-                "phpstan/phpstan-phpunit": "@stable",
+                "phpstan/phpstan": "^0.12.88 || ^1.0.0",
+                "phpstan/phpstan-phpunit": "^1.0 || ^2.0",
                 "phpunit/phpunit": ">=7.0",
                 "symfony/process": "^4.4 || ^5.0",
                 "tecnickcom/tcpdf": "^6.5"
             },
             "suggest": {
                 "dompdf/dompdf": "Allows writing PDF",
-                "ext-gd2": "Allows adding images",
                 "ext-xmlwriter": "Allows writing OOXML and ODF",
-                "ext-xsl": "Allows applying XSL style sheet to headers, to main document part, and to footers of an OOXML template",
-                "ext-zip": "Allows writing OOXML and ODF"
+                "ext-xsl": "Allows applying XSL style sheet to headers, to main document part, and to footers of an OOXML template"
             },
-            "time": "2025-01-01T09:15:53+00:00",
+            "time": "2025-01-08T12:09:14+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -3993,7 +3992,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-only"
             ],
             "authors": [
                 {
@@ -5172,6 +5171,55 @@
                 "wiki": "http://www.yiiframework.com/wiki/"
             },
             "install-path": "../robregonm/yii2-pdf"
+        },
+        {
+            "name": "sadovojav/yii2-ckeditor",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sadovojav/yii2-ckeditor.git",
+                "reference": "85deeb36f0a3e6b6e04fc8b4a6126928767ad3c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sadovojav/yii2-ckeditor/zipball/85deeb36f0a3e6b6e04fc8b4a6126928767ad3c0",
+                "reference": "85deeb36f0a3e6b6e04fc8b4a6126928767ad3c0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "time": "2016-01-07T19:09:18+00:00",
+            "default-branch": true,
+            "type": "yii2-extension",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "sadovojav\\ckeditor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Aleksandr Sadovoj",
+                    "email": "sadovojav@gmail.com",
+                    "homepage": "https://github.com/sadovojav"
+                }
+            ],
+            "description": "Yii2 CKEditor",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "wysiwyg",
+                "yii"
+            ],
+            "support": {
+                "issues": "https://github.com/sadovojav/yii2-ckeditor/issues",
+                "source": "https://github.com/sadovojav/yii2-ckeditor/tree/master"
+            },
+            "install-path": "../sadovojav/yii2-ckeditor"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

@@ -54,7 +54,8 @@
     "ext-simplexml": "*",
     "firebase/php-jwt": "^6.4",
     "ext-zlib": "*",
-    "yiisoft/yii2-jui": "^2.0"
+    "yiisoft/yii2-jui": "^2.0",
+    "sadovojav/yii2-ckeditor": "dev-master"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "~2.0.0",

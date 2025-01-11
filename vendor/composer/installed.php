@@ -3,7 +3,7 @@
         'name' => 'githubjeka/rest-yii2',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '6c6f4c6473c607ca005a4d345948dcb0b1c9afc2',
+        'reference' => '37308b1c5adf479a93a25780fdfa958b444f699b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -379,7 +379,7 @@
         'githubjeka/rest-yii2' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '6c6f4c6473c607ca005a4d345948dcb0b1c9afc2',
+            'reference' => '37308b1c5adf479a93a25780fdfa958b444f699b',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -693,7 +693,7 @@
         'phpoffice/phpword' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'f24aabca176858b5b549d7425e33fa5cde30e0a9',
+            'reference' => '639f39635ab2c84a5e75b23a9e0c0127a61a320a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpoffice/phpword',
             'aliases' => array(
@@ -891,6 +891,17 @@
             'reference' => '09485f1e96b244328cac8d9833908586995434b0',
             'type' => 'yii2-extension',
             'install_path' => __DIR__ . '/../robregonm/yii2-pdf',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'sadovojav/yii2-ckeditor' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '85deeb36f0a3e6b6e04fc8b4a6126928767ad3c0',
+            'type' => 'yii2-extension',
+            'install_path' => __DIR__ . '/../sadovojav/yii2-ckeditor',
             'aliases' => array(
                 0 => '9999999-dev',
             ),

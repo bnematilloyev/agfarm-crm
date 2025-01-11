@@ -43,7 +43,7 @@ class CurrencyTypeSearch extends CurrencyType
      */
     public function search($params)
     {
-        $query = CurrencyType::find();
+        $query = CurrencyType::find()->orderBy(['id' => SORT_ASC]);
 
         // add conditions that should always apply here
 

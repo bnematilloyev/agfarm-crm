@@ -1,5 +1,5 @@
 {
-  "name": "workify",
+  "name": "drugs",
   "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.org/githubjeka/yii2-rest.svg)](https://travis-ci.org/githubjeka/yii2-rest)",
   "main": "gulpfile.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/Husayn_Hasanov/workify.git"
+    "url": "git+https://gitlab.com/nematilloyevbro/crm-drug.git"
   },
   "keywords": [],
   "author": "",
@@ -31,9 +31,9 @@
     "sass": "^1.43.2"
   },
   "bugs": {
-    "url": "https://gitlab.com/Husayn_Hasanov/workify/issues"
+    "url": "https://gitlab.com/nematilloyevbro/crm-drug/issues"
   },
-  "homepage": "https://gitlab.com/Husayn_Hasanov/workify#readme",
+  "homepage": "https://gitlab.com/nematilloyevbro/crm-drug#readme",
   "dependencies": {
     "@fullcalendar/core": "^6.1.11"
   }

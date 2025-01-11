@@ -18,7 +18,7 @@ class ProductSearch extends Product
     {
         return [
             [['id', 'company_id', 'category_id', 'brand_id', 'state', 'status', 'sort', 'currency_id', 'trust_percent', 'creator_id', 'updater_admin_id', 'price_changed_at', 'created_at', 'updated_at'], 'integer'],
-            [['name_uz', 'name_ru', 'name_en', 'description_uz', 'description_ru', 'description_en', 'slug', 'main_image', 'images', 'video', 'meta_json_uz', 'meta_json_ru', 'meta_json_en', 'categories', 'similar', 'stat'], 'safe'],
+            [['name_uz', 'name_ru', 'name_en', 'description_uz', 'description_ru', 'description_en', 'slug', 'main_image', 'imageField', 'video', 'meta_json_uz', 'meta_json_ru', 'meta_json_en', 'categories', 'similar', 'stat'], 'safe'],
             [['actual_price', 'old_price', 'cost'], 'number'],
         ];
     }
@@ -86,7 +86,6 @@ class ProductSearch extends Product
             ->andFilterWhere(['ilike', 'description_en', $this->description_en])
             ->andFilterWhere(['ilike', 'slug', $this->slug])
             ->andFilterWhere(['ilike', 'main_image', $this->main_image])
-            ->andFilterWhere(['ilike', 'images', $this->images])
             ->andFilterWhere(['ilike', 'video', $this->video])
             ->andFilterWhere(['ilike', 'meta_json_uz', $this->meta_json_uz])
             ->andFilterWhere(['ilike', 'meta_json_ru', $this->meta_json_ru])

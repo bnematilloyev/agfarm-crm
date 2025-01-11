@@ -3,7 +3,7 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'pgsql:host=workify-db;dbname=workify',
+            'dsn' => 'pgsql:host=drugs-db;dbname=drugs',
             'username' => 'postgres',
             'password' => 'postgres',
             'charset' => 'utf8',

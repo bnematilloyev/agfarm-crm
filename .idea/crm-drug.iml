@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/yii2-app-advanced/common/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/yii2-app-advanced/frontend/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/gherkin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/inputmask" />
@@ -235,6 +236,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/zircote/swagger-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/jquery-ui" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-jui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sadovojav/yii2-ckeditor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

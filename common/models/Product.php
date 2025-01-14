@@ -172,6 +172,16 @@ class Product extends BaseTimestampedModel
     }
 
     /**
+     * Gets query for [[CurrencyType]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCurrency()
+    {
+        return $this->hasOne(CurrencyType::class, ['id' => 'currency_id']);
+    }
+
+    /**
      * Gets query for [[ProductCollections]].
      *
      * @return \yii\db\ActiveQuery

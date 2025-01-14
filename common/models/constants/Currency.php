@@ -13,6 +13,7 @@ class Currency
         return [
             self::SUM => 'SUM',
             self::USD => 'USD',
+            self::RUB => 'RUB',
         ];
     }
 

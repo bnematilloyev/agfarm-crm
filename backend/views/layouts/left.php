@@ -58,6 +58,38 @@ $user = Yii::$app->user->identity;
                                         <span><?= Yii::t('app', 'Category') ?> </span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="<?= Url::to(['/product']) ?>">
+                                        <i class="icon-feather-box"></i>
+                                        <span><?= Yii::t('app', 'Product Charasteristic') ?> </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= Url::to(['/product']) ?>">
+                                        <i class="icon-feather-box"></i>
+                                        <span><?= Yii::t('app', 'Product') ?> </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span><?= Yii::t('app', 'Website setting') ?> </span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="<?=Url::to(['/website-settings/product-price'])?>">
+                                        <i class="icon-line-awesome-dollar"></i>
+                                        <span><?=Yii::t('app', 'Product price')?></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?=Url::to(['/website-settings/product-priority'])?>">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span><?=Yii::t('app', 'Product priority')?></span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li>

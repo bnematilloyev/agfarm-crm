@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'main_image',
                     'format' => 'raw',
                     'value' => function ($model) {
-                        $img = "<a href='" . Yii::getAlias('@assets_url/product/main_image/') . $model->main_image . "' data-fancybox=\"images\" >" . Html::img(Yii::getAlias('@assets_url/product/main_image/') . $model->main_image, ['class' => 'img-fluid']) . '</a>';
+                        $img = "<a href='" . Yii::getAlias('@assets_url/product/main_image/mobile') . $model->main_image . "' data-fancybox=\"images\" >" . Html::img(Yii::getAlias('@assets_url/product/main_image/mobile') . $model->main_image, ['class' => 'img-fluid']) . '</a>';
                         return $img;
                     },
                     'filter' => false,
@@ -81,7 +81,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 [
                     'attribute' => 'brand_id',
-                    'value' => 'product_brand.name_' . Yii::$app->language,
+                    'value' => function ($model) {
+                        /** @var Product $model */
+                        return $model->brand->{'name_' . Yii::$app->language} ?? null; // Handles missing brand gracefully
+                    },
+//                    'value' => 'product_brand.name_' . Yii::$app->language,
                     'filter' => \kartik\select2\Select2::widget([
                         'name' => 'ProductSearch[brand_id]',
                         'data' => \yii\helpers\ArrayHelper::map(
@@ -122,14 +126,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'status',
                     'format' => 'raw',
                     'value' => function ($model) {
-                        return Html::dropDownList(
-                            'status',
-                            $model->status,
-                            \common\models\constants\ProductStatus::getStatusOnAndOff(),
-                            [
-                                'onchange' => 'changeStatus(' . $model->id . ', this)'
-                            ]
-                        );
+                        return \common\models\constants\ProductStatus::getString($model->status);
                     },
                     'filter' => \common\models\constants\ProductStatus::getStatusOnAndOff(),
 
@@ -144,10 +141,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'meta_json_en',
                 //'categories',
                 //'similar',
-                //'actual_price',
+                'actual_price',
+                [
+                    'attribute' => 'currency_id',
+                    'value' => function($model){
+                        return $model->currency->name;
+                    },
+                    'format' => 'raw',
+                    'filter' => \common\models\constants\Currency::getArray(),
+                ],
                 //'old_price',
                 //'cost',
-                //'currency_id',
                 //'trust_percent',
                 //'creator_id',
                 //'updater_admin_id',

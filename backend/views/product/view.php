@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var common\models\Product $model */
 
-$this->title = $model->id;
+$this->title = $model->{'name_' . Yii::$app->language};
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Products'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -35,18 +35,65 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'company_id',
-            'category_id',
-            'brand_id',
+            [
+                'attribute' => 'company_id',
+                'value' => function ($model) {
+                    return $model->company->name;
+                },
+                'format' => 'raw',
+            ],
+            [
+                'attribute' => 'category_id',
+                'value' => function ($model) {
+                    return $model->category->{'name_' . Yii::$app->language};
+                },
+                'format' => 'raw',
+            ],
+            [
+                'attribute' => 'brand_id',
+                'value' => function ($model) {
+                    return $model->brand->{'name_' . Yii::$app->language};
+                },
+                'format' => 'raw',
+            ],
             'name_uz',
             'name_ru',
             'name_en',
-            'description_uz:ntext',
-            'description_ru:ntext',
-            'description_en:ntext',
-            'state',
-            'status',
+            [
+                'attribute' => 'description_uz',
+                'value' => function ($model) {
+                    return $model->description_uz;
+                },
+                'format' => 'html',
+            ],
+            [
+                'attribute' => 'description_ru',
+                'value' => function ($model) {
+                    return $model->description_ru;
+                },
+                'format' => 'html',
+            ],
+            [
+                'attribute' => 'description_en',
+                'value' => function ($model) {
+                    return $model->description_en;
+                },
+                'format' => 'html',
+            ],
+            [
+                'attribute' => 'state',
+                'value' => function ($model) {
+                    return \common\models\constants\ProductState::getString($model->state);
+                },
+                'format' => 'html',
+            ],
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    return \common\models\constants\ProductStatus::getString($model->status);
+                },
+                'format' => 'html',
+            ],
             'sort',
             'slug',
             'main_image',

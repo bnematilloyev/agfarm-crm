@@ -61,13 +61,33 @@ $user = Yii::$app->user->identity;
                                 <li>
                                     <a href="<?= Url::to(['/product']) ?>">
                                         <i class="icon-feather-box"></i>
-                                        <span><?= Yii::t('app', 'Product Charasteristic') ?> </span>
+                                        <span><?= Yii::t('app', 'Product') ?> </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="icon-feather-box"></i>
+                                <span><?= Yii::t('app', 'Product Charasteristic') ?> </span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="<?= Url::to(['/product-option']) ?>">
+                                        <i class="icon-feather-box"></i>
+                                        <span><?= Yii::t('app', 'Product option') ?> </span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= Url::to(['/product']) ?>">
+                                    <a href="<?= Url::to(['/product-option-type']) ?>">
                                         <i class="icon-feather-box"></i>
-                                        <span><?= Yii::t('app', 'Product') ?> </span>
+                                        <span><?= Yii::t('app', 'Product option type') ?> </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= Url::to(['/product-option-name']) ?>">
+                                        <i class="icon-feather-box"></i>
+                                        <span><?= Yii::t('app', 'Product option name') ?> </span>
                                     </a>
                                 </li>
                             </ul>

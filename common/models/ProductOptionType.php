@@ -17,7 +17,7 @@ use Yii;
  *
  * @property ProductOption[] $productOptions
  */
-class ProductOptionType extends \yii\db\ActiveRecord
+class ProductOptionType extends BaseTimestampedModel
 {
 
 

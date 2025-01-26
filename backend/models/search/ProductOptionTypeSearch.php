@@ -11,6 +11,8 @@ use common\models\ProductOptionType;
  */
 class ProductOptionTypeSearch extends ProductOptionType
 {
+    public $to_date_range;
+    public $from_date_range;
     /**
      * {@inheritdoc}
      */
@@ -18,7 +20,7 @@ class ProductOptionTypeSearch extends ProductOptionType
     {
         return [
             [['id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['name_uz', 'name_ru', 'name_en'], 'safe'],
+            [['name_uz', 'name_ru', 'name_en', 'to_date_range', 'from_date_range'], 'safe'],
         ];
     }
 
@@ -55,6 +57,12 @@ class ProductOptionTypeSearch extends ProductOptionType
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
             return $dataProvider;
+        }
+
+        if ($this->to_date_range !== "" && !is_null($this->to_date_range)) {
+            $start_date = strtotime($this->from_date_range);
+            $end_date = strtotime($this->to_date_range) + 60 * 60 * 24;
+            $query->andFilterWhere(['between', 'created_at', $start_date, $end_date]);
         }
 
         // grid filtering conditions

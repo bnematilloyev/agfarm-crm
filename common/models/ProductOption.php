@@ -20,7 +20,7 @@ use Yii;
  * @property ProductOptionType $optionType
  * @property Product $product
  */
-class ProductOption extends \yii\db\ActiveRecord
+class ProductOption extends BaseTimestampedModel
 {
 
 

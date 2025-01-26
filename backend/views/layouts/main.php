@@ -64,13 +64,13 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed201
             console.log(position);
           var latitude = position.coords.latitude;
           var longitude = position.coords.longitude;
-           $.ajax({
-                    url: "https://api.abrand.uz/v2/administrator/update-location?token="+current_user_token+"&lat="+latitude+"&lng="+longitude,
-                    type: 'GET',
-                    success: function(result) {
-                        console.log(result);
-                    }               
-            });
+           // $.ajax({
+           //          url: "https://api.abrand.uz/v2/administrator/update-location?token="+current_user_token+"&lat="+latitude+"&lng="+longitude,
+           //          type: 'GET',
+           //          success: function(result) {
+           //              console.log(result);
+           //          }               
+           //  });
         }
     $('.js-clipboard-button').on('click', function() {
      var textArea = document.createElement("textarea");

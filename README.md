@@ -16,9 +16,9 @@ npm install
 
 Drugsda uchta site bor. Hammasini sass, css, js filelari alohida !!!
 
-- api.drugs.uz
-- cabinet.drugs.uz 
-- drugs.uz
+- api.agfarm.uz
+- cabinet.agfarm.uz 
+- agfarm.uz
 
 Agarda siz leasingdagi styleni o\`zgartirmoqchi bo\`lsangiz terminalga ushbu komandani yozing
 

@@ -112,11 +112,11 @@ class TelegramHelper
     /**
      * @return void
      */
-    public function deadMessage($state = '')
-    {
-        $this->setChatIdBySlug('bugs');
-        $this->sendMessage("@Saidjamol_Qosimxonov PAYMO o`chib qoldi ko`ringlarchi nima muammo ekan!\r\nAgar ushbu paymo ishlavotgan bo`lsa \r\nPAYMO ({$state}): https://merchant.paymo.uz/\r\nYoqish:  https://crm.abrand.uz/setting/toggle?name=paymo-integration");
-    }
+//    public function deadMessage($state = '')
+//    {
+//        $this->setChatIdBySlug('bugs');
+//        $this->sendMessage("@Saidjamol_Qosimxonov PAYMO o`chib qoldi ko`ringlarchi nima muammo ekan!\r\nAgar ushbu paymo ishlavotgan bo`lsa \r\nPAYMO ({$state}): https://merchant.paymo.uz/\r\nYoqish:  https://crm.abrand.uz/setting/toggle?name=paymo-integration");
+//    }
 
     public static function sendMessageIntoSlug($message, $slug)
     {
@@ -386,24 +386,24 @@ class TelegramHelper
      * @param OrderItemAwait $payment
      * @return void
      */
-    public function sendCashInfo($payment, $state, $slug = "cash-payment-info-channel")
-    {
-        $is_web = !\Yii::$app->request->isConsoleRequest;
-        if ($is_web) {
-            $admin = \Yii::$app->user->identity;
-            $system = "💻 Qurilma : {$admin->agent}";
-        } else {
-            $admin = User::findOne(User::ASAXIY_BOT);
-            $system = "💻 Qurilma : Murobaha.uz Server";
-        }
-        $this->setChatIdBySlug($slug);
-        $order = $payment->order;
-        $customer = $order->customer;
-        $customer_info = '<a href="https://crm.abrand.uz/customer/view?id=' . $customer->id . '">' . $customer->full_name . ' ~ ' . $customer->pin . '</a>';
-        $order_info = '<a href="https://crm.abrand.uz/order/view?id=' . $order->id . '">' . $order->id . '</a>';
-        $text = "{$state}\n👤️️ {$customer_info}\n🗂 Rassrochka Id: {$order_info}\n🔫 Miqdor: {$payment->amount_text} so`m\n🏦 Do'kon: {$order->market->name}\n👨‍💻 Admin ({$admin->id}): {$admin->full_name}\n" . $system;
-        $this->sendMessage($text);
-    }
+//    public function sendCashInfo($payment, $state, $slug = "cash-payment-info-channel")
+//    {
+//        $is_web = !\Yii::$app->request->isConsoleRequest;
+//        if ($is_web) {
+//            $admin = \Yii::$app->user->identity;
+//            $system = "💻 Qurilma : {$admin->agent}";
+//        } else {
+//            $admin = User::findOne(User::ASAXIY_BOT);
+//            $system = "💻 Qurilma : Murobaha.uz Server";
+//        }
+//        $this->setChatIdBySlug($slug);
+//        $order = $payment->order;
+//        $customer = $order->customer;
+//        $customer_info = '<a href="https://crm.abrand.uz/customer/view?id=' . $customer->id . '">' . $customer->full_name . ' ~ ' . $customer->pin . '</a>';
+//        $order_info = '<a href="https://crm.abrand.uz/order/view?id=' . $order->id . '">' . $order->id . '</a>';
+//        $text = "{$state}\n👤️️ {$customer_info}\n🗂 Rassrochka Id: {$order_info}\n🔫 Miqdor: {$payment->amount_text} so`m\n🏦 Do'kon: {$order->market->name}\n👨‍💻 Admin ({$admin->id}): {$admin->full_name}\n" . $system;
+//        $this->sendMessage($text);
+//    }
 
     /**
      * @param $response

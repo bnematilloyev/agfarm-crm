@@ -39,13 +39,10 @@ class ProductOption extends BaseTimestampedModel
     {
         return [
             [['status'], 'default', 'value' => 10],
-            [['option_type', 'option_name', 'value', 'product_id', 'created_at', 'updated_at'], 'required'],
+            [['option_type', 'option_name', 'value', 'product_id'], 'required'],
             [['option_type', 'option_name', 'product_id', 'status', 'created_at', 'updated_at'], 'default', 'value' => null],
             [['option_type', 'option_name', 'product_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['value'], 'string', 'max' => 255],
-            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::class, 'targetAttribute' => ['product_id' => 'id']],
-            [['option_name'], 'exist', 'skipOnError' => true, 'targetClass' => ProductOptionName::class, 'targetAttribute' => ['option_name' => 'id']],
-            [['option_type'], 'exist', 'skipOnError' => true, 'targetClass' => ProductOptionType::class, 'targetAttribute' => ['option_type' => 'id']],
         ];
     }
 

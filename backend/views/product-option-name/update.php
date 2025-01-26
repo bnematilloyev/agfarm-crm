@@ -6,15 +6,17 @@ use yii\helpers\Html;
 /** @var common\models\ProductOptionName $model */
 
 $this->title = Yii::t('app', 'Update Product Option Name: {name}', [
-    'name' => $model->id,
+    'name' => $model->{'name_' . Yii::$app->language},
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Product Option Names'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->{'name_' . Yii::$app->language}, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
-<div class="product-option-name-update">
+<div class="headline border-0">
+    <h2><?= Html::encode($this->title) ?></h2>
+</div>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="content with-padding padding-bottom-0  market_create-form">
 
     <?= $this->render('_form', [
         'model' => $model,

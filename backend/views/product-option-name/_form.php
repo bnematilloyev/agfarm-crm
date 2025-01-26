@@ -8,26 +8,23 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="product-option-name-form">
-
-    <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'name_uz')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+<?php $form = ActiveForm::begin(); ?>
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($model, 'name_uz')->textInput(['maxlength' => true, 'class' => 'with-border']) ?>
+        </div>
+        <div class="col-md-4">
+    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true, 'class' => 'with-border']) ?>
     </div>
-
-    <?php ActiveForm::end(); ?>
-
-</div>
+    <div class="col-md-4">
+        <?= $form->field($model, 'name_en')->textInput(['maxlength' => true, 'class' => 'with-border']) ?>
+    </div>
+    <div class="col-md-12">
+        <div class="d-flex justify-content-center align-items-center mt-20" style="gap: 20px">
+                <a class="d-block cursor-pointer"
+                   style="padding: 4px 30px ; color: silver ;border: 1px solid silver ; border-radius:4px ;background-color: transparent"
+                   href="/"> Bekor qilish</a>
+                <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'button ripple-effect ', 'style' => 'padding:8px 30px; background-color:#00BFAF']) ?>
+        </div>
+    </div>
+<?php ActiveForm::end(); ?>

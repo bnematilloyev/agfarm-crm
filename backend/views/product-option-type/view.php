@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
 <div class="content with-padding padding-bottom-0 market_view-table">
 
     <?= DetailView::widget([

@@ -66,36 +66,36 @@ $admin = Yii::$app->user->identity;
                     <div>
                         <table class="table w-100">
                             <tbody class="profil-info-body">
-                            <tr class="profil-info-tr">
-                                <td scope="row"
-                                    class="border-0"><?= $model->getAttributeLabel('company_id') ?></td>
-                                <td class="border-0"><?= $model->company->name ?></td>
-                            </tr>
-                            <tr class="profil-info-tr">
-                                <td scope="row"
-                                    class="border-0"><?= $model->getAttributeLabel('market_id') ?></td>
-                                <td class="border-0"><?= $model->market->name ?></td>
-                            </tr>
-                            <tr class="profil-info-tr">
-                                <td scope="row" class="border-0"><?= Yii::t('app', 'Full name') ?></td>
-                                <td class="border-0 py-0">
-                                    <?= $model->full_name ?>
-                                </td>
-                            </tr>
-                            <tr class="profil-info-tr">
-                                <td scope="row" class="border-0"><?= Yii::t('app', 'Phone') ?></td>
-                                <td class="border-0 py-0">
-                                    <?= Html::a($model->phone, ['/customer/view-by-phone', 'phone' => $model->phone],['style'=>'font-family: Inter;font-size: 20px;font-weight: 600;color: #333;']) ?>
-                                </td>
-                            </tr>
-                            <tr class="profil-info-tr">
-                                <td scope="row" class="border-0"><?= $model->getAttributeLabel('created_at') ?></td>
-                                <td class="border-0 py-0"><?= Utilities::toStringDate($model->created_at) ?></td>
-                            </tr>
-                            <tr class="profil-info-tr">
-                                <td scope="row" class="border-0"><?= $model->getAttributeLabel('updated_at') ?></td>
-                                <td class="border-0 py-0"><?= Utilities::toStringDate($model->updated_at) ?></td>
-                            </tr>
+                                <tr class="profil-info-tr">
+                                    <td scope="row"
+                                        class="border-0"><?= $model->getAttributeLabel('company_id') ?></td>
+                                    <td class="border-0"><?= $model->company->name ?></td>
+                                </tr>
+                                <tr class="profil-info-tr">
+                                    <td scope="row"
+                                        class="border-0"><?= $model->getAttributeLabel('market_id') ?></td>
+                                    <td class="border-0"><?= $model->market->name ?></td>
+                                </tr>
+                                <tr class="profil-info-tr">
+                                    <td scope="row" class="border-0"><?= Yii::t('app', 'Full name') ?></td>
+                                    <td class="border-0 py-0">
+                                        <?= $model->full_name ?>
+                                    </td>
+                                </tr>
+                                <tr class="profil-info-tr">
+                                    <td scope="row" class="border-0"><?= Yii::t('app', 'Phone') ?></td>
+                                    <td class="border-0 py-0">
+                                        <?= Html::a($model->phone, ['/customer/view-by-phone', 'phone' => $model->phone],['style'=>'font-family: Inter;font-size: 20px;font-weight: 600;color: #333;']) ?>
+                                    </td>
+                                </tr>
+                                <tr class="profil-info-tr">
+                                    <td scope="row" class="border-0"><?= $model->getAttributeLabel('created_at') ?></td>
+                                    <td class="border-0 py-0"><?= Utilities::toStringDate($model->created_at) ?></td>
+                                </tr>
+                                <tr class="profil-info-tr">
+                                    <td scope="row" class="border-0"><?= $model->getAttributeLabel('updated_at') ?></td>
+                                    <td class="border-0 py-0"><?= Utilities::toStringDate($model->updated_at) ?></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

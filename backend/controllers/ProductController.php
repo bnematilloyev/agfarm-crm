@@ -88,21 +88,19 @@ class ProductController extends Controller
     public function actionCreate()
     {
         $model = new Product();
+        $user = Yii::$app->user->identity;
 
-        if ($this->request->isPost) {
-            $model->company_id = Yii::$app->user->identity->company_id;
-            $model->creator_id = Yii::$app->user->identity->id;
-            $model->updater_admin_id = Yii::$app->user->identity->id;
-            if ($model->load($this->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && Yii::$app->request->isPost) {
+            $model->company_id = $user->company_id;
+            $model->creator_id = $user->id;
+            $model->old_price = 0;
+
+            if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
-        } else {
-            $model->loadDefaultValues();
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        return $this->render('create', ['model' => $model]);
     }
 
     /**
@@ -115,9 +113,15 @@ class ProductController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $user = Yii::$app->user->identity;
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) && Yii::$app->request->isPost) {
+            $model->updater_admin_id = $user->id;
+            $model->old_price = $model->oldAttributes(['actual_price']);
+
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [
@@ -176,6 +180,44 @@ class ProductController extends Controller
         }
 
         return $out;
+    }
+
+    public function actionSavePriority()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+
+        $id = Yii::$app->request->post('id');
+        $sort = Yii::$app->request->post('sort');
+
+        if (($model = Product::findOne($id)) !== null) {
+            $model->sort = $sort;
+            if ($model->save()) {
+                return ['success' => true];
+            }
+        }
+
+        return ['success' => false];
+    }
+
+    public function actionSavePrice()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $id = Yii::$app->request->post('id');
+        $actualPrice = Yii::$app->request->post('actual_price');
+        $cost = Yii::$app->request->post('cost');
+
+        $model = Product::findOne($id);
+        if ($model) {
+            $model->actual_price = $actualPrice;
+            $model->cost = $cost;
+            $model->old_price = $model->getOldAttribute('actual_price');
+            $model->updater_admin_id = Yii::$app->user->identity->id;
+            if ($model->save(false)) {
+                return ['success' => true];
+            }
+        }
+
+        return ['success' => false];
     }
 
     /**

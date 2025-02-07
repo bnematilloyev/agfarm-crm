@@ -40,7 +40,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'lastPageLabel' => '>>>'
         ),
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+                ['class' => 'yii\grid\SerialColumn'],
+            [
+                'headerOptions' => ['width' => '150px'],
+                'attribute' => 'main_image',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    $img = "<a href='" . Yii::getAlias('@assets_url/category/desktop') . $model->image . "' data-fancybox=\"images\" >" . Html::img(Yii::getAlias('@assets_url/category/mobile') . $model->image, ['class' => 'img-fluid']) . '</a>';
+                    return $img;
+                },
+                'filter' => false,
+            ],
                 'name_uz',
                 'name_ru',
                 'name_en',

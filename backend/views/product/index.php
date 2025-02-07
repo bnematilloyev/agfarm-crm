@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'main_image',
                     'format' => 'raw',
                     'value' => function ($model) {
-                        $img = "<a href='" . Yii::getAlias('@assets_url/product/main_image/mobile') . $model->main_image . "' data-fancybox=\"images\" >" . Html::img(Yii::getAlias('@assets_url/product/main_image/mobile') . $model->main_image, ['class' => 'img-fluid']) . '</a>';
+                        $img = "<a href='" . Yii::getAlias('@assets_url/product/main_image/desktop') . $model->main_image . "' data-fancybox=\"images\" >" . Html::img(Yii::getAlias('@assets_url/product/main_image/mobile') . $model->main_image, ['class' => 'img-fluid']) . '</a>';
                         return $img;
                     },
                     'filter' => false,

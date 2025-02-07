@@ -42,13 +42,14 @@ class ProductBrand extends BaseTimestampedModel
     public function rules()
     {
         return [
-            [['name_uz', 'name_ru', 'name_en', 'slug', 'image', 'home_page', 'meta_json_uz', 'meta_json_ru', 'meta_json_en', 'official_link', 'created_at', 'updated_at'], 'default', 'value' => null],
+            [['name_uz', 'name_ru', 'name_en', 'slug', 'image', 'home_page', 'meta_json_uz', 'meta_json_ru', 'meta_json_en', 'official_link', 'description_uz', 'description_ru', 'description_en'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 10],
             [['home_page'], 'boolean'],
             [['meta_json_uz', 'meta_json_ru', 'meta_json_en'], 'safe'],
             [['status', 'created_at', 'updated_at'], 'default', 'value' => null],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['name_uz', 'name_ru', 'name_en', 'slug', 'image', 'official_link'], 'string', 'max' => 255],
+            [['description_uz', 'description_ru', 'description_en'], 'string', 'max' => 6000],
         ];
     }
 

@@ -38,14 +38,14 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'company_id',
                 'value' => function ($model) {
-                    return $model->company->name;
+                    return $model->company->name ?? Yii::t('app', 'Empty');
                 },
                 'format' => 'raw',
             ],
             [
                 'attribute' => 'category_id',
                 'value' => function ($model) {
-                    return $model->category->{'name_' . Yii::$app->language};
+                    return $model->category->{'name_' . Yii::$app->language} ?? Yii::t('app', 'Empty');
                 },
                 'format' => 'raw',
             ],
@@ -96,7 +96,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'sort',
             'slug',
-            'main_image',
+            [
+                'attribute' => 'main_image',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return Html::img(Yii::getAlias('@assets_url/product/main_image/desktop'.$model->main_image));
+                }
+            ],
             'images',
             'video',
             'meta_json_uz',
@@ -107,27 +113,94 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'value' => function ($model) {
                     if (is_array($model->categories)) {
-                        $categoriesArray = $model->categories;
+                        $categoryIds = $model->categories;
                     } else {
                         $decodedCategories = Html::decode((string)$model->categories);
-                        $categoriesArray = explode(',', $decodedCategories);
+                        $categoryIds = explode(',', $decodedCategories);
                     }
-                    return implode(', ', $categoriesArray);
-                }
-            ],
 
-            'similar',
+                    $categoryNames = \common\models\ProductCategory::find()
+                        ->select('name_' . Yii::$app->language)
+                        ->where(['in', 'id',  $categoryIds])
+                        ->column();
+
+                    return !empty($categoryNames) ? implode(', ', $categoryNames) : Yii::t('app', 'Empty');
+                },
+            ],
+            [
+                'attribute' => 'similar',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if (is_array($model->similar)) {
+                        $productIds = $model->similar['product_id'];
+                    } else {
+                        $decodedProducts = Html::decode((string)$model->similar);
+                        $productIds = explode(',', $decodedProducts);
+                    }
+
+                    $productNames = \common\models\Product::find()
+                        ->select('name_' . Yii::$app->language)
+                        ->where(['in', 'id', $productIds])
+                        ->column();
+
+                    return !empty($productNames) ? implode(', ', $productNames) : Yii::t('app', 'Empty');
+                },
+            ],
             'actual_price',
             'old_price',
             'cost',
-            'currency_id',
+            [
+                'attribute' => 'currency_id',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return \common\models\CurrencyType::findOne($model->currency_id)->name ?? Yii::t('app', 'Belgilanmagan');
+                }
+            ],
             'trust_percent',
-            'creator_id',
-            'updater_admin_id',
-            'price_changed_at',
-            'stat',
+            [
+                'attribute' => 'creator_id',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return $model->creator ? $model->creator->full_name : Yii::t('app', 'Belgilanmagan');
+                }
+            ],
+             [
+                'attribute' => 'updater_admin_id',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return $model->updaterAdmin ? $model->updaterAdmin->full_name : Yii::t('app', 'Belgilanmagan');
+                }
+             ],
+            'price_changed_at:datetime',
             'created_at:datetime',
             'updated_at:datetime',
+        ]
+    ]) ?>
+
+    <h5><strong><?= Yii::t('app', 'Статистика'); ?></strong></h5>
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            [
+                'label' => Yii::t('app', 'Проголосовали'),
+                'value' => $model->stat['vote'] ?? 0
+            ],
+            [
+                'label' => Yii::t('app', 'Читали'),
+                'value' => $model->stat['read_count'] ?? 0
+            ],
+            [
+                'label' => Yii::t('app', 'Отзывы'),
+                'value' => $model->stat['review_count'] ?? 0
+            ],
+            [
+                'label' => Yii::t('app', 'Пожелали'),
+                'value' => $model->stat['wish_count'] ?? 0
+            ],
+            [
+                'label' => Yii::t('app', 'Поделелись'),
+                'value' => $model->stat['share_count'] ?? 0
+            ],
         ],
     ]) ?>
 

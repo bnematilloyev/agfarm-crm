@@ -34,17 +34,24 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= DetailView::widget([
             'model' => $model,
-            'attributes' => ['id',
-            'name_uz',
-            'name_ru',
-            'name_en',
-            'description_uz:ntext',
-            'description_ru:ntext',
-            'description_en:ntext',
-            'parent_id',
-            'created_at:datetime',
-            'updated_at:datetime',
-        ],
+            'attributes' => [
+                [
+                    'attribute' => 'image',
+                    'format' => 'html',
+                    'value' => function ($model) {
+                        return Html::img(Yii::getAlias('@assets_url/category/desktop/') . $model->image, ['width' => '200px']);
+                    },
+                ],
+                'name_uz',
+                'name_ru',
+                'name_en',
+                'description_uz:ntext',
+                'description_ru:ntext',
+                'description_en:ntext',
+                'parent_id',
+                'created_at:datetime',
+                'updated_at:datetime',
+            ],
     ]) ?>
 
 </div>

@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use common\models\ProductCategory;
 use backend\models\ProductCategorySearch;
+use common\widgets\cropper\actions\UploadAction;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -29,6 +30,19 @@ class ProductCategoryController extends Controller
                 ],
             ]
         );
+    }
+
+    public function actions()
+    {
+        return [
+            'upload-photo' => [
+                'class' => UploadAction::className(),
+                'url' => '',
+                'path' => '@assets/category/desktop',
+                'second_path' => '@assets/category/mobile',
+                'second_dimension' => [210, 210],
+            ]
+        ];
     }
 
     /**

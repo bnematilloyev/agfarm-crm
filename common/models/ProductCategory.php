@@ -11,6 +11,7 @@ use Yii;
  * @property string|null $name_uz
  * @property string|null $name_ru
  * @property string|null $name_en
+ * @property string|null $image
  * @property string|null $description_uz
  * @property string|null $description_ru
  * @property string|null $description_en
@@ -38,11 +39,11 @@ class ProductCategory extends BaseTimestampedModel
     public function rules()
     {
         return [
-            [['name_uz', 'name_ru', 'name_en', 'description_uz', 'description_ru', 'description_en', 'parent_id', 'created_at', 'updated_at'], 'default', 'value' => null],
+            [['name_uz', 'name_ru', 'name_en', 'description_uz', 'description_ru', 'description_en', 'parent_id', 'created_at', 'updated_at', 'image'], 'default', 'value' => null],
             [['description_uz', 'description_ru', 'description_en'], 'string'],
             [['parent_id', 'created_at', 'updated_at'], 'default', 'value' => null],
             [['parent_id', 'created_at', 'updated_at'], 'integer'],
-            [['name_uz', 'name_ru', 'name_en'], 'string', 'max' => 255],
+            [['name_uz', 'name_ru', 'name_en', 'image'], 'string', 'max' => 255],
         ];
     }
 
@@ -62,6 +63,7 @@ class ProductCategory extends BaseTimestampedModel
             'parent_id' => Yii::t('app', 'Parent ID'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
+            'image' => Yii::t('app', 'Image'),
         ];
     }
 

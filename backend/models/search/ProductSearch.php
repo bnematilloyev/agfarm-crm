@@ -96,4 +96,69 @@ class ProductSearch extends Product
 
         return $dataProvider;
     }
+
+    public function search_by_priority($params)
+    {
+        $query = Product::find()->orderBy(['sort' => SORT_DESC]);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'company_id' => $this->company_id,
+            'category_id' => $this->category_id,
+            'brand_id' => $this->brand_id,
+            'status' => $this->status,
+            'sort' => $this->sort,
+        ]);
+
+        $query->andFilterWhere(['ilike', 'name_uz', $this->name_uz])
+            ->andFilterWhere(['ilike', 'name_ru', $this->name_ru])
+            ->andFilterWhere(['ilike', 'name_en', $this->name_en]);
+
+        return $dataProvider;
+    }
+
+    public function search_by_price($params)
+    {
+        $query = Product::find()->orderBy(['sort' => SORT_DESC]);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'company_id' => $this->company_id,
+            'category_id' => $this->category_id,
+            'brand_id' => $this->brand_id,
+            'status' => $this->status,
+            'sort' => $this->sort,
+            'actual_price' => $this->actual_price,
+            'old_price' => $this->old_price,
+            'cost' => $this->cost,
+            'currency_id' => $this->currency_id,
+            'trust_percent' => $this->trust_percent,
+        ]);
+
+        $query->andFilterWhere(['ilike', 'name_uz', $this->name_uz])
+            ->andFilterWhere(['ilike', 'name_ru', $this->name_ru])
+            ->andFilterWhere(['ilike', 'name_en', $this->name_en]);
+
+        return $dataProvider;
+    }
 }

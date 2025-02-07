@@ -14,6 +14,13 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
     <div class="row">
         <div class="col-md-6">
+            <?php echo $form->field($model, 'image')->widget(\sultonov\cropper\CropperWidget::className(), [
+                'uploadUrl' => \yii\helpers\Url::toRoute('/product-category/upload-photo'),
+                'prefixUrl' => Yii::getAlias('@assets_url/category/desktop'),
+                'width' => 1080,
+                'height' => 1080
+            ]) ?>
+
             <?= $form->field($model, 'name_uz')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>

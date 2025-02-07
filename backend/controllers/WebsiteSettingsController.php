@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\search\ProductSearch;
 use common\filters\AccessRule;
 use common\models\constants\UserRole;
 use yii\filters\AccessControl;
@@ -39,11 +40,23 @@ class WebsiteSettingsController extends \backend\controllers\BaseController
 
     public function actionProductPriority()
     {
-        return $this->render('product-priority', []);
+        $searchModel = new ProductSearch();
+        $dataProvider = $searchModel->search_by_priority($this->request->queryParams);
+
+        return $this->render('product-priority', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function actionProductPrice()
     {
-        return $this->render('product-price', []);
+        $searchModel = new ProductSearch();
+        $dataProvider = $searchModel->search_by_price($this->request->queryParams);
+
+        return $this->render('product-price', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 }

@@ -220,6 +220,31 @@ class ProductController extends Controller
         return ['success' => false];
     }
 
+    public function actionStatus()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $product = Product::findOne((Yii::$app->request->post('product_id')));
+        $status = Yii::$app->request->post('status');
+//        if (!$this->admin->is_Firuz && $product->status == PublishableStatus::STATUS_PUBLISHED && $status != PublishableStatus::STATUS_PUBLISHED) {
+//            if (StockService::getQuantity($product->id) > 0) {
+//                Yii::$app->session->setFlash('error', 'Mahsulot savdoda borligi sabab statusni o\'zgartirib bo\'lmaydi.');
+//                return $this->redirect(Yii::$app->request->referrer);
+//            }
+//        }
+        $product->status = $status;
+//        if ($status == PublishableStatus::STATUS_PUBLISHED && $product->state == ProductState::NOT_AVAILABLE)
+//            $product->state = ProductState::AVAILABLE;
+//        if ($product->status == PublishableStatus::STATUS_WAITING)
+//            ProductListItems::removeFromList($product->id);
+        if (!$product->save(false)) {
+            return $product->errors;
+        }
+//
+//        if ($product->status === PublishableStatus::STATUS_PUBLISHED) {
+//            $this->service->synchronisation($product, is_null($product->moysklad_hash));
+//        }
+    }
+
     /**
      * Finds the Product model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

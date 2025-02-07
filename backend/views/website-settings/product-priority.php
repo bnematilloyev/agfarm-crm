@@ -114,7 +114,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'status',
                     'format' => 'raw',
                     'value' => function ($model) {
-                        return \common\models\constants\ProductStatus::getString($model->status);
+                        return Html::dropDownList(
+                            'status',
+                            $model->status,
+                            \common\models\constants\ProductStatus::getStatusOnAndOff(),
+                            [
+                                'onchange' => 'changeStatus(' . $model->id . ', this)',
+                                'class' => 'form-control',
+                            ]
+                        );
                     },
                     'filter' => \common\models\constants\ProductStatus::getStatusOnAndOff()
                 ],

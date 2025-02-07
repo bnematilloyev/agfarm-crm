@@ -41,7 +41,7 @@ class ProductSearch extends Product
      */
     public function search($params)
     {
-        $query = Product::find();
+        $query = Product::find()->orderBy(['status' => SORT_DESC, 'created_at' => SORT_DESC]);
 
         // add conditions that should always apply here
 

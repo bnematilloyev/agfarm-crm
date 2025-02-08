@@ -2,6 +2,7 @@
 
 namespace backend\models\search;
 
+use common\models\constants\ProductStatus;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\Product;
@@ -153,6 +154,36 @@ class ProductSearch extends Product
             'cost' => $this->cost,
             'currency_id' => $this->currency_id,
             'trust_percent' => $this->trust_percent,
+        ]);
+
+        $query->andFilterWhere(['ilike', 'name_uz', $this->name_uz])
+            ->andFilterWhere(['ilike', 'name_ru', $this->name_ru])
+            ->andFilterWhere(['ilike', 'name_en', $this->name_en]);
+
+        return $dataProvider;
+    }
+
+    public function search_archived($params)
+    {
+        $query = Product::find()->andWhere(['status' => ProductStatus::STATUS_ARCHIVED])->orderBy(['sort' => SORT_DESC]);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'company_id' => $this->company_id,
+            'category_id' => $this->category_id,
+            'brand_id' => $this->brand_id,
+            'status' => $this->status,
+            'sort' => $this->sort,
         ]);
 
         $query->andFilterWhere(['ilike', 'name_uz', $this->name_uz])

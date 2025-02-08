@@ -1776,4 +1776,11 @@ class Utilities
         return floor($daysRemaining);
     }
 
+    public static function charLimiter($text, $limit) {
+        $words = explode(' ', strip_tags($text));
+        $words = array_filter($words);
+        $firstWords = array_slice($words, 0, $limit);
+        return implode(' ', $firstWords) . (count($words) > $limit ? '...' : '');
+    }
+
 }

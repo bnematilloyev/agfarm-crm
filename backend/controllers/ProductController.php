@@ -2,11 +2,13 @@
 
 namespace backend\controllers;
 
+use backend\models\search\ProductOptionSearch;
 use common\helpers\Utilities;
 use common\models\constants\ProductStatus;
 use common\models\constants\PublishableStatus;
 use common\models\Product;
 use backend\models\search\ProductSearch;
+use common\models\ProductOption;
 use common\widgets\cropper\actions\UploadAction;
 use Yii;
 use yii\db\Exception;
@@ -69,6 +71,22 @@ class ProductController extends Controller
     }
 
     /**
+     * Lists all Product models.
+     *
+     * @return string
+     */
+    public function actionArchived()
+    {
+        $searchModel = new ProductSearch();
+        $dataProvider = $searchModel->search_archived($this->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
      * Displays a single Product model.
      * @param int $id IDsi
      * @return string
@@ -76,8 +94,12 @@ class ProductController extends Controller
      */
     public function actionView($id)
     {
+        $searchModel = new ProductOptionSearch();
+        $product_options = $searchModel->search_for_product($id);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'product_options' => $product_options,
         ]);
     }
 
@@ -96,6 +118,9 @@ class ProductController extends Controller
             $model->creator_id = $user->id;
             $model->old_price = 0;
             $model->slug = Utilities::slugify($model->name_uz);
+            $model->meta_json_uz = json_encode(array('description' => Utilities::charLimiter($model->description_uz, 30), 'keywords' => $model->name_uz));
+            $model->meta_json_ru = json_encode(array('description' => Utilities::charLimiter($model->description_ru, 30), 'keywords' => $model->name_ru));
+            $model->meta_json_en = json_encode(array('description' => Utilities::charLimiter($model->description_en, 30), 'keywords' => $model->name_en));
 
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
@@ -119,7 +144,7 @@ class ProductController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && Yii::$app->request->isPost) {
             $model->updater_admin_id = $user->id;
-            $model->old_price = $model->oldAttributes(['actual_price']);
+            $model->old_price = $model->getOldAttribute('actual_price');
 
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);

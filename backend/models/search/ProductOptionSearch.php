@@ -80,4 +80,10 @@ class ProductOptionSearch extends ProductOption
 
         return $dataProvider;
     }
+
+    public function search_for_product($product_id)
+    {
+        return ProductOption::find()->where(['product_id' => $product_id])->all();
+    }
+
 }

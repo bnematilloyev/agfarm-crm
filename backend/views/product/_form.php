@@ -22,7 +22,7 @@ use common\models\constants\UserRole;
     <div style="width:85%; margin: 5px auto;">
         <div class="tabs customer_tabs">
             <div class="tabs-header" style="max-width: 100% !important; width: 100%;">
-                <ul>
+                <ul class="d-flex align-items-center justify-content-center">
                     <li>
                         <a class="tab__link active" href="javascript:void(0)" data-tab-id="1">
                             <i class="icon-line-awesome-edit"></i> <?= Yii::t('app', 'Main') ?>
@@ -40,34 +40,31 @@ use common\models\constants\UserRole;
                     </li>
                     <li>
                         <a class="tab__link" href="javascript:void(0)" data-tab-id="4">
-                            <i class="icon-material-outline-assignment"></i> <?= Yii::t('app', 'Charasteristic') ?>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="tab__link" href="javascript:void(0)" data-tab-id="5">
                             <i class="icon-line-awesome-dollar"></i> <?= Yii::t('app', 'Price') ?>
                         </a>
                     </li>
                     <li>
-                        <a class="tab__link" href="javascript:void(0)" data-tab-id="6">
+                        <a class="tab__link" href="javascript:void(0)" data-tab-id="5">
                             <i class="icon-feather-box"></i> <?= Yii::t('app', 'Image') ?>
                         </a>
                     </li>
                     <li>
-                        <a class="tab__link" href="javascript:void(0)" data-tab-id="7">
+                        <a class="tab__link" href="javascript:void(0)" data-tab-id="6">
                             <i class="icon-feather-box"></i> <?= Yii::t('app', 'Video') ?>
                         </a>
                     </li>
                     <li>
-                        <a class="tab__link" href="javascript:void(0)" data-tab-id="8">
+                        <a class="tab__link" href="javascript:void(0)" data-tab-id="7">
                             <i class="icon-line-awesome-credit-card"></i> <?= Yii::t('app', 'Similar Products') ?>
                         </a>
                     </li>
+                    <?php if ($model->id) { ?>
                     <li>
-                        <a class="tab__link" href="javascript:void(0)" data-tab-id="9">
+                        <a class="tab__link" href="javascript:void(0)" data-tab-id="8">
                             <i class="icon-material-outline-assignment"></i> <?= Yii::t('app', 'Meta Data') ?>
                         </a>
                     </li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="tabs-content" style="background-color: transparent !important;">
@@ -122,7 +119,7 @@ use common\models\constants\UserRole;
                                 <?= $form->field($model, 'state')->dropDownList(\common\models\constants\ProductState::getList()) ?>
                             </div>
                             <div class="col-md-4">
-                                <?= $form->field($model, 'status')->dropDownList(\common\models\constants\ProductStatus::getList()) ?>
+                                <?= $form->field($model, 'status')->dropDownList(\common\models\constants\ProductStatus::getList(),['value' => \common\models\constants\ProductStatus::STATUS_ARCHIVED]) ?>
                             </div>
                             <div class="col-md-4">
                                 <?= $form->field($model, 'sort')->textInput(['type' => 'number', 'disabled' => true]) ?>
@@ -190,10 +187,7 @@ use common\models\constants\UserRole;
                         ],
                     ]); ?>
                 </div>
-                <div class="tab  p-0 " data-tab-id="4">
-                    4
-                </div>
-                <div class="tab  p-0" data-tab-id="5">
+                <div class="tab  p-0" data-tab-id="4">
                     <?= $form->field($model, 'actual_price')->textInput(['type' => 'number']) ?>
 
                     <?= $form->field($model, 'cost')->textInput(['type' => 'number']) ?>
@@ -209,7 +203,7 @@ use common\models\constants\UserRole;
 
 <!--                    --><?php //= $form->field($model, 'trust_percent')->textInput(['type' => 'number']) ?>
                 </div>
-                <div class="tab  p-0" data-tab-id="6">
+                <div class="tab  p-0" data-tab-id="5">
                     <?php echo $form->field($model, 'main_image')->widget(CropperWidget::className(), [
                         'uploadUrl' => \yii\helpers\Url::toRoute('/product/upload-photo'),
                         'prefixUrl' => Yii::getAlias('@assets_url/product/main_image/desktop'),
@@ -245,7 +239,7 @@ use common\models\constants\UserRole;
                         ],
                     ]) ?>
                 </div>
-                <div class="tab  p-0" data-tab-id="7">
+                <div class="tab  p-0" data-tab-id="6">
                     <div class="form-group">
                         <?= $form->field($model, 'video')->widget(MultipleInput::className(), [
                             'iconSource' => MultipleInput::ICONS_SOURCE_FONTAWESOME,
@@ -272,7 +266,7 @@ use common\models\constants\UserRole;
                         ]); ?>
                     </div>
                 </div>
-                <div class="tab  p-0" data-tab-id="8">
+                <div class="tab  p-0" data-tab-id="7">
                     <?= $form->field($model, 'similar')->widget(MultipleInput::className(), [
                         'iconSource' => MultipleInput::ICONS_SOURCE_FONTAWESOME,
                         'min' => 1,
@@ -295,6 +289,7 @@ use common\models\constants\UserRole;
                                     'language' => Yii::$app->language,
                                     'data' => $model->getProductIds(),
                                     'pluginOptions' => [
+                                        'placeholder' => 'Tanlang',
                                         'allowClear' => true,
                                         'minimumInputLength' => 3,
                                         'language' => [
@@ -314,7 +309,7 @@ use common\models\constants\UserRole;
                         ],
                     ]); ?>
                 </div>
-                <div class="tab  p-0" data-tab-id="9">
+                <div class="tab  p-0" data-tab-id="8">
                     <div class="row">
                         <div class="col-md-4">
                             <?= $form->field($model, 'meta_json_uz')->textarea() ?>

@@ -64,6 +64,12 @@ $user = Yii::$app->user->identity;
                                         <span><?= Yii::t('app', 'Product') ?> </span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="<?= Url::to(['/product/archived']) ?>">
+                                        <i class="icon-feather-box"></i>
+                                        <span><?= Yii::t('app', 'Archived') ?> </span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li>

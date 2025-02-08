@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "product_option".
@@ -91,6 +92,11 @@ class ProductOption extends BaseTimestampedModel
     public function getProduct()
     {
         return $this->hasOne(Product::class, ['id' => 'product_id']);
+    }
+
+    public function getProductIds()
+    {
+        return ArrayHelper::map(Product::find()->all(), 'id', 'name_' . Yii::$app->language);
     }
 
 }

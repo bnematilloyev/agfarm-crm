@@ -1,5 +1,7 @@
 <?php
 
+use kartik\select2\Select2;
+use yii\web\JsExpression;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -14,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <div class="row">
         <div class="col-md-3">
-            <?= $form->field($model, 'product_id')->widget(\kartik\select2\Select2::classname(), [
+            <?= $form->field($model, 'product_id')->widget(Select2::classname(), [
                 'data' => \yii\helpers\ArrayHelper::map(\common\models\Product::findActive()->all(), 'id', 'name_'.Yii::$app->language),
                 'language' => 'en',
                 'options' => ['placeholder' => Yii::t('app', 'Select ...')],
@@ -23,27 +25,54 @@ use yii\widgets\ActiveForm;
                 ]
             ]); ?>
         </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'option_name')->widget(\kartik\select2\Select2::classname(), [
-                'data' => \yii\helpers\ArrayHelper::map(\common\models\ProductOptionName::findActive()->all(), 'id', 'name_'.Yii::$app->language),
-                'language' => 'en',
-                'options' => ['placeholder' => Yii::t('app', 'Select ...')],
-                'pluginOptions' => [
-                    'allowClear' => true
-                ]
-            ]); ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'value')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'option_type')->widget(\kartik\select2\Select2::classname(), [
-                'data' => \yii\helpers\ArrayHelper::map(\common\models\ProductOptionType::findActive()->all(), 'id', 'name_'.Yii::$app->language),
-                'language' => 'en',
-                'options' => ['placeholder' => Yii::t('app', 'Select ...')],
-                'pluginOptions' => [
-                    'allowClear' => true
-                ]
+        <div class="col-md-9">
+            <?= $form->field($model, 'options')->widget(\unclead\multipleinput\MultipleInput::className(), [
+                'iconSource' => \unclead\multipleinput\MultipleInput::ICONS_SOURCE_FONTAWESOME,
+                'min' => 1,
+                'allowEmptyList' => true,
+                'rendererClass' => \unclead\multipleinput\renderers\ListRenderer::className(),
+                'layoutConfig' => [
+                    'class' => 'd-flex flex-row align-items-center gap-3',
+                    'labelClass' => 'col-md-4',
+                    'wrapperClass' => 'col-md-4',
+                    'errorClass' => 'col-md-6',
+                    'buttonActionClass' => 'col-md-2',
+                ],
+                'columns' => [
+                    [
+                        'name' => 'option_name',
+                        'type' => Select2::className(),
+                        'options' => [
+                            'theme' => Select2::THEME_BOOTSTRAP,
+                            'language' => Yii::$app->language,
+                            'data' => \yii\helpers\ArrayHelper::map(\common\models\ProductOptionName::findActive()->all(), 'id', 'name_'.Yii::$app->language),
+                            'pluginOptions' => [
+                                'placeholder' => Yii::t('app', 'Select ...'),
+                                'allowClear' => true,
+                            ],
+                        ]
+                    ],
+                    [
+                        'name' => 'value',
+                        'type' => 'textInput',
+                        'options' => [
+                            'maxlength' => true,
+                        ]
+                    ],
+                    [
+                        'name' => 'option_type',
+                        'type' => Select2::className(),
+                        'options' => [
+                            'theme' => Select2::THEME_BOOTSTRAP,
+                            'language' => Yii::$app->language,
+                            'data' => \yii\helpers\ArrayHelper::map(\common\models\ProductOptionType::findActive()->all(),'id','name_'.Yii::$app->language),
+                            'pluginOptions' => [
+                                'placeholder' => Yii::t('app', 'Select ...'),
+                                'allowClear' => true,
+                            ],
+                        ]
+                    ],
+                ],
             ]); ?>
         </div>
         <div class="col-md-12">

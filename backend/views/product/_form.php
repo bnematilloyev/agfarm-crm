@@ -129,7 +129,7 @@ use common\models\constants\UserRole;
                             </div>
                         </div>
 
-                        <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+                        <?php if ($model->id) echo $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
 
                         <?php if ($model->id){
                             echo $form->field($model, 'creator_id')->dropDownList(\common\models\User::find()->select(['full_name', 'id'])->indexBy('id')->column());
@@ -196,8 +196,6 @@ use common\models\constants\UserRole;
                 <div class="tab  p-0" data-tab-id="5">
                     <?= $form->field($model, 'actual_price')->textInput(['type' => 'number']) ?>
 
-                    <?= $form->field($model, 'old_price')->textInput(['type' => 'number']) ?>
-
                     <?= $form->field($model, 'cost')->textInput(['type' => 'number']) ?>
 
                     <?= $form->field($model, 'currency_id')->widget(Select2::classname(), [
@@ -209,7 +207,7 @@ use common\models\constants\UserRole;
                         ]
                     ]); ?>
 
-                    <?= $form->field($model, 'trust_percent')->textInput(['type' => 'number']) ?>
+<!--                    --><?php //= $form->field($model, 'trust_percent')->textInput(['type' => 'number']) ?>
                 </div>
                 <div class="tab  p-0" data-tab-id="6">
                     <?php echo $form->field($model, 'main_image')->widget(CropperWidget::className(), [

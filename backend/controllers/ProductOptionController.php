@@ -7,6 +7,7 @@ use backend\models\search\ProductOptionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use Yii;
 
 /**
  * ProductOptionController implements the CRUD actions for ProductOption model.
@@ -69,18 +70,33 @@ class ProductOptionController extends Controller
     {
         $model = new ProductOption();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $options = $this->request->post('ProductOption')['options'] ?? [];
+
+            if (!empty($options)) {
+                foreach ($options as $option) {
+                    $product_option = new ProductOption();
+                    $product_option->product_id = $model->product_id;
+                    $product_option->option_name = $option['option_name'] ?? null;
+                    $product_option->value = $option['value'] ?? null;
+                    $product_option->option_type = $option['option_type'] ?? null;
+
+                    if (!$product_option->save()) {
+                        Yii::$app->session->setFlash('error', 'Failed to save an option.');
+                        var_dump($product_option->getErrors());die();
+                        return $this->render('create', ['model' => $model]);
+                    }
+                }
             }
-        } else {
-            $model->loadDefaultValues();
+
+            return $this->redirect(['view', 'id' => $model->product_id]);
         }
 
         return $this->render('create', [
             'model' => $model,
         ]);
     }
+
 
     /**
      * Updates an existing ProductOption model.

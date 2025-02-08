@@ -55,25 +55,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
             ],
             [
-                'attribute' => 'option_type',
-                'value' => function ($model) {
-                    return $model->optionType->{'name_' . Yii::$app->language};
-                },
-                'filter' => Select2::widget([
-                    'model' => $searchModel,
-                    'attribute' => 'option_type',
-                    'data' => \yii\helpers\ArrayHelper::map(\common\models\ProductOptionType::findActive()->all(), 'id', 'name_'.Yii::$app->language),
-                    'theme' => Select2::THEME_BOOTSTRAP,
-                    'options' => [
-                        'placeholder' => Yii::t('app', 'Select ...'),
-                    ],
-                    'pluginOptions' => [
-                        'allowClear' => true
-                    ],
-                ]),
-                'format' => 'raw',
-            ],
-            [
                 'attribute' => 'option_name',
                 'value' => function ($model) {
                     return $model->optionName->{'name_' . Yii::$app->language};
@@ -93,6 +74,25 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
             ],
             'value',
+            [
+                'attribute' => 'option_type',
+                'value' => function ($model) {
+                    return $model->optionType->{'name_' . Yii::$app->language};
+                },
+                'filter' => Select2::widget([
+                    'model' => $searchModel,
+                    'attribute' => 'option_type',
+                    'data' => \yii\helpers\ArrayHelper::map(\common\models\ProductOptionType::findActive()->all(),'id','name_'.Yii::$app->language),
+                    'theme' => Select2::THEME_BOOTSTRAP,
+                    'options' => [
+                        'placeholder' => Yii::t('app', 'Select ...'),
+                    ],
+                    'pluginOptions' => [
+                        'allowClear' => true
+                    ],
+                ]),
+                'format' => 'raw',
+            ],
             [
                 'attribute' => 'status',
                 'value' => function ($model) {

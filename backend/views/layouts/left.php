@@ -79,15 +79,15 @@ $user = Yii::$app->user->identity;
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= Url::to(['/product-option-type']) ?>">
-                                        <i class="icon-feather-box"></i>
-                                        <span><?= Yii::t('app', 'Product option type') ?> </span>
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="<?= Url::to(['/product-option-name']) ?>">
                                         <i class="icon-feather-box"></i>
                                         <span><?= Yii::t('app', 'Product option name') ?> </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= Url::to(['/product-option-type']) ?>">
+                                        <i class="icon-feather-box"></i>
+                                        <span><?= Yii::t('app', 'Product option type') ?> </span>
                                     </a>
                                 </li>
                             </ul>

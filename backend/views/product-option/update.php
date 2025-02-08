@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 
 <div class="content with-padding padding-bottom-0  market_create-form">
 
-    <?= $this->render('_form', [
+    <?= $this->render('_form_update', [
         'model' => $model,
     ]) ?>
 

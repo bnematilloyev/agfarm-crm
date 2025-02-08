@@ -36,9 +36,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             [
-                'attribute' => 'option_type',
+                'attribute' => 'option_name',
                 'value' => function ($model) {
-                    return $model->optionType->{'name_' . Yii::$app->language};
+                    return $model->optionName->{'name_' . Yii::$app->language};
                 },
                 'format' => 'raw',
             ],
@@ -52,15 +52,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 'filter' => \common\models\constants\GeneralStatus::getList()
             ],
+            'value',
+            'created_at:datetime',
             [
-                'attribute' => 'option_name',
+                'attribute' => 'option_type',
                 'value' => function ($model) {
-                    return $model->optionName->{'name_' . Yii::$app->language};
+                    return $model->optionType->{'name_' . Yii::$app->language};
                 },
                 'format' => 'raw',
             ],
-            'created_at:datetime',
-            'value',
             'updated_at:datetime',
         ],
     ]) ?>

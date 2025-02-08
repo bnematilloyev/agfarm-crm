@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\helpers\Utilities;
 use common\models\constants\ProductStatus;
 use common\models\constants\PublishableStatus;
 use common\models\Product;
@@ -94,6 +95,7 @@ class ProductController extends Controller
             $model->company_id = $user->company_id;
             $model->creator_id = $user->id;
             $model->old_price = 0;
+            $model->slug = Utilities::slugify($model->name_uz);
 
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
@@ -176,7 +178,7 @@ class ProductController extends Controller
             $out['results'] = array_values($data);
         } elseif ($id > 0) {
             $product = Product::findOne($id);
-            $out['results'] = ['id' => $id, 'text' => $product->name_ru, 'price' => $product->actual_price];
+            $out['results'] = ['id' => $id, 'text' => $product->{"name_".Yii::$app->language}, 'price' => $product->actual_price];
         }
 
         return $out;

@@ -4,6 +4,7 @@ namespace api\modules\v1\controllers;
 
 use api\behaviours\AdminJwtAuth;
 use api\behaviours\Verbcheck;
+use api\modules\v1\service\BrandService;
 
 class BrandsController extends RestController
 {
@@ -27,6 +28,6 @@ class BrandsController extends RestController
     }
     public function actionList(): array
     {
-
+        return BrandService::getProductBrandList($lang = 'ru');
     }
 }

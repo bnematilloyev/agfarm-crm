@@ -22,15 +22,20 @@ class BrandService
     public static function getProductBrandList($lang)
     {
         $data = [];
-        $model = ProductBrand::findActive()->where(['home_page' => true])->all();
-        if ($model) {
-            $data[] = [
-                'name' => $model->{"name_$lang"},
-                'name' => $model->{"name_$lang"},
+        $models = ProductBrand::findActive()->where(['home_page' => true])->all();
 
-            ];
-            return \Yii::$app->api->sendSuccessResponse($data);
-        } else
-            return \Yii::$app->api->sendFailedResponse(Yii::t('api', 'Product brand not found'));
+        if (!empty($models)) {
+            foreach ($models as $model) {
+                $data[] = [
+                    'id' => $model->id,
+                    'name' => $model->{"name_" . $lang},
+                    'image' => Yii::getAlias('@assets_url/brand').$model->image,
+                ];
+            }
+            return Yii::$app->api->sendSuccessResponse($data);
+        } else {
+            return Yii::$app->api->sendFailedResponse(Yii::t('api', 'Product brand not found'));
+        }
     }
+
 }

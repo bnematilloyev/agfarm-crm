@@ -37,5 +37,24 @@ class BrandService
             return Yii::$app->api->sendFailedResponse(Yii::t('api', 'Product brand not found'));
         }
     }
+    public static function getProductBrandSingle($id, $lang)
+    {
+        $data = [];
+        $brand = ProductBrand::findOne($id);
+
+        if (!empty($brand)) {
+             $data = [
+                 'meta_data' => $brand->{"meta_json_" . $lang},
+                 'name' => $brand->{"name_" . $lang},
+                 'image' => Yii::getAlias('@assets_url/brand').$brand->image,
+                 'wallpaper' => Yii::getAlias('@assets_url/brand/wallpaper').$brand->wallpaper,
+                 'description' => $brand->{"description_" . $lang},
+                 'official_link' => $brand->official_link,
+             ];
+            return Yii::$app->api->sendSuccessResponse($data);
+        } else {
+            return Yii::$app->api->sendFailedResponse(Yii::t('api', 'Product brand not found'));
+        }
+    }
 
 }

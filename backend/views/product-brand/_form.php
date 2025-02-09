@@ -17,37 +17,88 @@ use yii\widgets\ActiveForm;
                 <div class="col-md-6">
                     <h3 class="mb-10"><?=Yii::t('app', 'Main')?></h3>
                     <?= $form->field($model, 'name_uz')->textInput(['maxlength' => true]) ?>
-                    <?= $form->field($model, 'meta_json_uz')->textInput() ?>
+                    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
                     <?= $form->field($model, 'official_link')->textInput(['maxlength' => true]) ?>
-                    <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-6">
-                    <?= $form->field($model, 'image')->widget(\sultonov\cropper\CropperWidget::className(), [
-                        'uploadUrl' => Url::toRoute('/product-brand/upload-photo'),
-                        'prefixUrl' => Yii::getAlias('@assets_url/brand/'),
-                        'width' => 70,
-                        'height' => 70
-                    ]) ?>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <?= $form->field($model, 'image')->widget(\sultonov\cropper\CropperWidget::className(), [
+                                'uploadUrl' => Url::toRoute('/product-brand/upload-photo'),
+                                'prefixUrl' => Yii::getAlias('@assets_url/brand/image/'),
+                                'width' => 70,
+                                'height' => 70
+                            ]) ?>
+                        </div>
+                        <div class="col-md-6">
+                            <?= $form->field($model, 'wallpaper')->widget(\sultonov\cropper\CropperWidget::className(), [
+                                'uploadUrl' => Url::toRoute('/product-brand/upload-photo'),
+                                'prefixUrl' => Yii::getAlias('@assets_url/brand/wallpaper/'),
+                                'width' => 70,
+                                'height' => 70
+                            ]) ?>
+                        </div>
+                    </div>
                     <?= $form->field($model, 'status')->dropDownList(\common\models\constants\GeneralStatus::getList()) ?>
                     <?= $form->field($model, 'home_page')->checkbox() ?>
                 </div>
             </div>
         </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="product-brand-create content with-padding padding-bottom-0 comment-update form-create-update mb-20">
-                        <h3 class="mb-10"><?=Yii::t('app', 'Meta RU')?></h3>
-                        <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
-                        <?= $form->field($model, 'meta_json_ru')->textInput() ?>
+                        <h3 class="mb-10"><?=Yii::t('app', 'Description')?></h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <?= $form->field($model, 'description_uz')->widget(\common\components\ckeditor\CKEditor::className(), [
+                                    'editorOptions' => [
+                                        'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                                        'inline' => false, //по умолчанию false
+                                        'allowedContent' => true,
+                                        'extraAllowedContent' => true,
+                                        'extraPlugins' => ['pastefromword', 'pastefromgdocs', 'pastetools'],
+                                        'forcePasteAsPlainText' => false,
+                                    ],
+                                ]); ?>
+                            </div>
+                            <div class="col-md-4">
+                                <?= $form->field($model, 'description_ru')->widget(\common\components\ckeditor\CKEditor::className(), [
+                                    'editorOptions' => [
+                                        'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                                        'inline' => false, //по умолчанию false
+                                        'allowedContent' => true,
+                                        'extraAllowedContent' => true,
+                                        'extraPlugins' => ['pastefromword', 'pastefromgdocs', 'pastetools'],
+                                        'forcePasteAsPlainText' => false,
+                                    ],
+                                ]); ?>
+                            </div>
+                            <div class="col-md-4">
+                                <?= $form->field($model, 'description_en')->widget(\common\components\ckeditor\CKEditor::className(), [
+                                    'editorOptions' => [
+                                        'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                                        'inline' => false, //по умолчанию false
+                                        'allowedContent' => true,
+                                        'extraAllowedContent' => true,
+                                        'extraPlugins' => ['pastefromword', 'pastefromgdocs', 'pastetools'],
+                                        'forcePasteAsPlainText' => false,
+                                    ],
+                                ]); ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="product-brand-create content with-padding padding-bottom-0 comment-update form-create-update mb-20">
-                        <h3 class="mb-10"><?=Yii::t('app', 'Meta EN')?></h3>
-                        <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
-                        <?= $form->field($model, 'meta_json_en')->textInput() ?>
+                <?php if ($model->id) { ?>
+                    <div class="col-md-12">
+                        <div class="product-brand-create content with-padding padding-bottom-0 comment-update form-create-update mb-20">
+                            <h3 class="mb-10"><?=Yii::t('app', 'Meta Data')?></h3>
+                            <?= $form->field($model, 'meta_json_uz')->textInput() ?>
+                            <?= $form->field($model, 'meta_json_ru')->textInput() ?>
+                            <?= $form->field($model, 'meta_json_en')->textInput() ?>
+                        </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
 
         <div class="col-md-12">

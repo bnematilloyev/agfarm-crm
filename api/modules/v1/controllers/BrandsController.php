@@ -16,18 +16,26 @@ class BrandsController extends RestController
         return $behaviors + [
                 'apiauth' => [
                     'class' => AdminJwtAuth::className(),
-                    'exclude' => ['list'],
+                    'exclude' => ['list', 'single'],
                 ],
                 'verbs' => [
                     'class' => Verbcheck::className(),
                     'actions' => [
                         'list' => ['GET'],
+                        'single' => ['GET'],
                     ],
                 ],
             ];
     }
     public function actionList(): array
     {
-        return BrandService::getProductBrandList($lang = 'ru');
+        $lang = $this->request['lang'] ?? 'uz';
+        return BrandService::getProductBrandList($lang);
+    }
+
+    public function actionSingle($id): array
+    {
+        $lang = $this->request['lang'] ?? 'uz';
+        return BrandService::getProductBrandSingle($id, $lang);
     }
 }

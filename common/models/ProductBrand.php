@@ -13,6 +13,7 @@ use Yii;
  * @property string|null $name_en
  * @property string|null $slug
  * @property string|null $image
+ * @property string|null $wallpaper
  * @property bool|null $home_page
  * @property string|null $meta_json_uz
  * @property string|null $meta_json_ru

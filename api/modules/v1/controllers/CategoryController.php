@@ -5,8 +5,9 @@ namespace api\modules\v1\controllers;
 use api\behaviours\AdminJwtAuth;
 use api\behaviours\Verbcheck;
 use api\modules\v1\service\BrandService;
+use api\modules\v1\service\CategoryService;
 
-class BrandsController extends RestController
+class CategoryController extends RestController
 {
     public function behaviors()
     {
@@ -16,14 +17,13 @@ class BrandsController extends RestController
         return $behaviors + [
                 'apiauth' => [
                     'class' => AdminJwtAuth::className(),
-                    'exclude' => ['list', 'single', 'products'],
+                    'exclude' => ['list', 'single'],
                 ],
                 'verbs' => [
                     'class' => Verbcheck::className(),
                     'actions' => [
                         'list' => ['GET'],
                         'single' => ['GET'],
-                        'products' => ['GET'],
                     ],
                 ],
             ];
@@ -31,18 +31,12 @@ class BrandsController extends RestController
     public function actionList(): array
     {
         $lang = $this->request['lang'] ?? 'uz';
-        return BrandService::getProductBrandList($lang);
+        return CategoryService::getProductCategoryList($lang);
     }
 
     public function actionSingle($id): array
     {
         $lang = $this->request['lang'] ?? 'uz';
-        return BrandService::getProductBrandSingle($id, $lang);
-    }
-
-    public function actionProducts($id): array
-    {
-        $lang = $this->request['lang'] ?? 'uz';
-        return BrandService::getBrandProducts($id, $lang);
+        return CategoryService::getProductCategorySingle($id, $lang);
     }
 }

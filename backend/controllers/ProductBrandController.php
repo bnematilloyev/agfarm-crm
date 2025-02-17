@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\helpers\Utilities;
 use Yii;
 use common\models\ProductBrand;
 use backend\models\ProductBrandSearch;
@@ -39,15 +40,15 @@ class ProductBrandController extends Controller
             'upload-photo' => [
                 'class' => UploadAction::className(),
                 'url' => '',
-                'prefixPath' => Yii::getAlias('@assets_url/brand/'),
-                'path' => '@assets/brand/',
+                'prefixPath' => Yii::getAlias('@assets_url/brand/image/'),
+                'path' => '@assets/brand/image/',
             ],
-//            'upload-slider' => [
-//                'class' => UploadAction::className(),
-//                'url' => '',
-//                'prefixPath' => Yii::getAlias('@assets_url/brand/sliders/'),
-//                'path' => '@assets/brand/sliders/',
-//            ]
+            'upload-wallpaper' => [
+                'class' => UploadAction::className(),
+                'url' => '',
+                'prefixPath' => Yii::getAlias('@assets_url/brand/wallpaper/'),
+                'path' => '@assets/brand/wallpaper/',
+            ]
         ];
     }
 
@@ -89,12 +90,13 @@ class ProductBrandController extends Controller
     {
         $model = new ProductBrand();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-        } else {
-            $model->loadDefaultValues();
+        if ($model->load(Yii::$app->request->post()) && Yii::$app->request->isPost) {
+           $model->slug = Utilities::slugify($model->name_uz);
+           $model->meta_json_uz = json_encode(array('description' => Utilities::charLimiter($model->description_uz, 30), 'keywords' => $model->name_uz));
+           $model->meta_json_ru = json_encode(array('description' => Utilities::charLimiter($model->description_ru, 30), 'keywords' => $model->name_ru));
+           $model->meta_json_en = json_encode(array('description' => Utilities::charLimiter($model->description_en, 30), 'keywords' => $model->name_en));
+           if ($model->save())
+               return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [

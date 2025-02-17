@@ -14,12 +14,12 @@ return [
     'dashboardUrl' => 'https://api.agfarm.uz/v1/dashboard',
     'v1ApiUrl' => 'https://api.agfarm.uz/v1/',
     'hatico-token' => 'APA91bGtNJjTsLgd7e6YOy2aJp1A_4R',
-    'admin_phones' => ["+998941541995", "+998931773977", "+998900220114", "+998939404393", "+998936534451"],
-    'paymo-token' => 'VHNM72Q37T77T3kyYUo=',
-    'leasing-secret-key' => '81x9i2ch',
-    'zip-password' => 'cHpR1oKp69o1H',
+//    'admin_phones' => ["+998941541995", "+998931773977", "+998900220114", "+998939404393", "+998936534451"],
+//    'paymo-token' => 'VHNM72Q37T77T3kyYUo=',
+//    'leasing-secret-key' => '81x9i2ch',
+//    'zip-password' => 'cHpR1oKp69o1H',
     'location-sending-time-interval' => 1,  //in minutes
-    'hatico-service-key' => 'cHpRCEoKnjp69o4mgjIRWpRpXvSKE93M',
+//    'hatico-service-key' => 'cHpRCEoKnjp69o4mgjIRWpRpXvSKE93M',
     'main-server-ip' => ["185.74.7.47", "185.74.7.48"],
     'image-render-server-ip' => ["185.196.21.207"],
     'my_id.auth.otp.length' => 6,
@@ -27,5 +27,5 @@ return [
     'my_id.auth.otp.expiration_time' => 300, // 5 minutes
     'my_id.auth.otp.wrong_attempt_count' => 5,
     'my_id.auth.otp.block_time' => 300, // 5 minutes
-    'sipCrmToken' => 'hu2f3d-34dew21-h24jhSPcD46-DI78Mu8hb-bGOve-dsQiio-dqZ5cQio',
+//    'sipCrmToken' => 'hu2f3d-34dew21-h24jhSPcD46-DI78Mu8hb-bGOve-dsQiio-dqZ5cQio',
 ];

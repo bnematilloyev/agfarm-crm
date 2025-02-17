@@ -48,30 +48,30 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed201
     </div>
     <?php
     $auth_key = (!Yii::$app->user->isGuest ? Yii::$app->user->identity->auth_key : '');
-    $locationSendingTimeInterval = Yii::$app->params['location-sending-time-interval'] * 60 * 1000;
+//    $locationSendingTimeInterval = Yii::$app->params['location-sending-time-interval'] * 60 * 1000;
     $js = <<<JS
-        var current_user_token = '$auth_key';
-        getCurrentLocation();
-        setInterval(function() {getCurrentLocation();}, $locationSendingTimeInterval);//this method works
-        function getCurrentLocation() {
-            if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-              console.log("Geolocation is not supported by this browser.");
-            }
-        } 
-        function showPosition(position) {
-            console.log(position);
-          var latitude = position.coords.latitude;
-          var longitude = position.coords.longitude;
-           // $.ajax({
-           //          url: "https://api.abrand.uz/v2/administrator/update-location?token="+current_user_token+"&lat="+latitude+"&lng="+longitude,
-           //          type: 'GET',
-           //          success: function(result) {
-           //              console.log(result);
-           //          }               
-           //  });
-        }
+//        var current_user_token = '$auth_key';
+//        getCurrentLocation();
+//        setInterval(function() {getCurrentLocation();}, locationSendingTimeInterval);//this method works
+//        function getCurrentLocation() {
+//            if (navigator.geolocation) {
+//              navigator.geolocation.getCurrentPosition(showPosition);
+//            } else {
+//              console.log("Geolocation is not supported by this browser.");
+//            }
+//        } 
+//        function showPosition(position) {
+//            console.log(position);
+//          var latitude = position.coords.latitude;
+//          var longitude = position.coords.longitude;
+//           // $.ajax({
+//           //          url: "https://api.abrand.uz/v2/administrator/update-location?token="+current_user_token+"&lat="+latitude+"&lng="+longitude,
+//           //          type: 'GET',
+//           //          success: function(result) {
+//           //              console.log(result);
+//           //          }               
+//           //  });
+//        }
     $('.js-clipboard-button').on('click', function() {
      var textArea = document.createElement("textarea");
         textArea.value = $(this).data("pin");

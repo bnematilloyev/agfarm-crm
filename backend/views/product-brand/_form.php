@@ -33,7 +33,7 @@ use yii\widgets\ActiveForm;
                         </div>
                         <div class="col-md-6">
                             <?= $form->field($model, 'wallpaper')->widget(\sultonov\cropper\CropperWidget::className(), [
-                                'uploadUrl' => Url::toRoute('/product-brand/upload-photo'),
+                                'uploadUrl' => Url::toRoute('/product-brand/upload-wallpaper'),
                                 'prefixUrl' => Yii::getAlias('@assets_url/brand/wallpaper/'),
                                 'width' => 70,
                                 'height' => 70

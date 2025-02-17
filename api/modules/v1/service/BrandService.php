@@ -9,6 +9,7 @@
 namespace api\modules\v1\service;
 
 use common\models\Imei;
+use common\models\Product;
 use common\models\ProductBrand;
 use Yii;
 
@@ -54,6 +55,25 @@ class BrandService
             return Yii::$app->api->sendSuccessResponse($data);
         } else {
             return Yii::$app->api->sendFailedResponse(Yii::t('api', 'Product brand not found'));
+        }
+    }
+
+    public static function getBrandProducts($id, $lang)
+    {
+        $data = [];
+        $products = Product::find()->where(['brand_id' => $id])->limit(10)->all();
+
+        if (!empty($products)) {
+            foreach ($products as $product) {
+                $data = [
+                    'product_id' => $product->id,
+                    'name' => $product->{"name_" . $lang},
+                    'image' => Yii::getAlias('@assets_url/product/main_image/mobile').$product->{"main_image"},
+                ];
+            }
+            return Yii::$app->api->sendSuccessResponse($data);
+        } else {
+            return Yii::$app->api->sendFailedResponse(Yii::t('api', 'Products not found'));
         }
     }
 

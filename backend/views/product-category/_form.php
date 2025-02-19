@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'parent_id', ['labelOptions' => ['label' => Yii::t('app', 'Parent ID')]])->widget(kartik\select2\Select2::class, [
-                'data' => \yii\helpers\ArrayHelper::map(\common\models\ProductCategory::find()->all(), 'id', 'name'),
+                'data' => \yii\helpers\ArrayHelper::map(\common\models\ProductCategory::find()->all(), 'id', 'name_'.Yii::$app->language),
                 'options' => ['placeholder' => 'Select a section...'],
                 'pluginOptions' => [
                     'allowClear' => true,

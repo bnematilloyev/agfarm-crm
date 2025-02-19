@@ -77,4 +77,9 @@ class ProductCategory extends BaseTimestampedModel
         return $this->hasMany(Product::class, ['category_id' => 'id']);
     }
 
+    public function getSubCategories()
+    {
+        return $this->hasMany(ProductCategory::class, ['parent_id' => 'id']);
+    }
+
 }

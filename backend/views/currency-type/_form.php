@@ -12,10 +12,13 @@ use yii\widgets\ActiveForm;
 <div class="currency-type-form">
     <?php $form = ActiveForm::begin(); ?>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
+                <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+            </div>
+            <div class="col-md-4">
                 <?= $form->field($model, 'value')->textInput() ?>
             </div>
             <div class="col-md-12">

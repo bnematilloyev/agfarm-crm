@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string|null $name
+ * @property string|null $slug
  * @property float|null $value
  * @property int|null $created_at
  * @property int|null $updated_at
@@ -31,11 +32,11 @@ class CurrencyType extends BaseTimestampedModel
     public function rules()
     {
         return [
-            [['name', 'value', 'created_at', 'updated_at'], 'default', 'value' => null],
+            [['name', 'slug', 'value', 'created_at', 'updated_at'], 'default', 'value' => null],
             [['value'], 'number'],
             [['created_at', 'updated_at'], 'default', 'value' => null],
             [['created_at', 'updated_at'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'slug'], 'string', 'max' => 255],
         ];
     }
 
@@ -47,6 +48,7 @@ class CurrencyType extends BaseTimestampedModel
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
+            'slug' => Yii::t('app', 'Slug name'),
             'value' => Yii::t('app', 'Value'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),

@@ -38,13 +38,13 @@ class ProductController extends RestController
         return $behaviors + [
                 'apiauth' => [
                     'class' => AdminJwtAuth::className(),
-                    'exclude' => ['list'],
+                    'exclude' => ['list', 'single'],
                 ],
                 'verbs' => [
                     'class' => Verbcheck::className(),
                     'actions' => [
                         'list' => ['GET'],
-//                        'department-list' => ['GET'],
+                        'single' => ['GET'],
                     ],
                 ],
             ];
@@ -69,6 +69,13 @@ class ProductController extends RestController
     {
         $lang = $this->request['lang'] ?? 'uz';
         return Yii::$app->api->sendSuccessResponse($this->productService->getProductList($lang));
+    }
+
+    public function actionSingle(): array
+    {
+        $lang = $this->request['lang'] ?? 'uz';
+        $product_id = $this->request['product_id'];
+        return Yii::$app->api->sendSuccessResponse($this->productService->getProductSingle($lang, $product_id));
     }
 
 }

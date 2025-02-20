@@ -158,7 +158,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'updater_admin_id',
                     'format' => 'raw',
                     'value' => function ($model) {
-                        return $model->updaterAdmin->full_name;
+                        return $model->updaterAdmin->full_name ?? Yii::t('app', 'Belgilanmagan');
                     }
                 ],
                 'trust_percent',

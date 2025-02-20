@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'attributes' => [
                 'id',
                 'name',
+                'slug',
                 'value',
                 'created_at:datetime',
                 'updated_at:datetime',

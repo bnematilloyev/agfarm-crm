@@ -1,5 +1,6 @@
 import { ie } from "./environment";
 import { EventHandlers } from "./eventhandlers";
+import Inputmask from "./inputmask.js";
 import { keys } from "./keycode.js";
 import {
   caret,
@@ -157,14 +158,17 @@ function checkVal(input, writeOut, strict, nptvl, initiatingEvent) {
           charCodes = "";
         }
       } else {
-        result = EventHandlers.keypressEvent.call(
-          inputmask,
-          keypress,
-          true,
-          false,
-          strict,
-          lvp + 1
-        );
+        result =
+          getTest.call(inputmask, ndx).match.static === true
+            ? EventHandlers.keypressEvent.call(
+                inputmask,
+                keypress,
+                true,
+                false,
+                strict,
+                lvp + 1
+              )
+            : false;
       }
       if (result) {
         if (
@@ -243,13 +247,13 @@ function checkVal(input, writeOut, strict, nptvl, initiatingEvent) {
         }
       }
     } else {
-      // mark al statics as generated
-      // while ((sndx = staticMatches.pop())) {
-      // 	validPos = maskset.validPositions[sndx];
-      // 	if (validPos) {
-      // 		validPos.generatedInput = true;
-      // 	}
-      // }
+      // delete all free statics
+      while ((sndx = staticMatches.pop())) {
+        validPos = maskset.validPositions[sndx];
+        if (validPos && maskset.validPositions[sndx + 1] === undefined) {
+          delete maskset.validPositions[sndx];
+        }
+      }
     }
   }
   if (writeOut) {
@@ -349,6 +353,15 @@ function unmaskedvalue(input) {
       opts
     );
   }
+
+  if (opts.outputMask && unmaskedValue.length > 0) {
+    return Inputmask.format(unmaskedValue, {
+      ...opts,
+      mask: opts.outputMask,
+      alias: null
+    });
+  }
+
   return unmaskedValue;
 }
 

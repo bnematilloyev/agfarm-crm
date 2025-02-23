@@ -25,7 +25,7 @@ import { getPlaceholder, getTest } from "./validation-tests";
 
 export { EventHandlers };
 
-var EventHandlers = {
+const EventHandlers = {
   keyEvent: function (e, checkval, writeOut, strict, ndx) {
     const inputmask = this.inputmask,
       opts = inputmask.opts,
@@ -472,10 +472,7 @@ var EventHandlers = {
 
     if (buffer !== inputValue) {
       changes = analyseChanges(inputValue, buffer, caretPos);
-      if (
-        (input.inputmask.shadowRoot || input.ownerDocument).activeElement !==
-        input
-      ) {
+      if (input.getRootNode().activeElement !== input) {
         input.focus();
       }
       writeBuffer(input, getBuffer.call(inputmask));
@@ -587,8 +584,7 @@ var EventHandlers = {
     inputmask.mouseEnter = false;
     if (
       opts.clearMaskOnLostFocus &&
-      (input.inputmask.shadowRoot || input.ownerDocument).activeElement !==
-        input
+      input.getRootNode().activeElement !== input
     ) {
       HandleNativePlaceholder(input, inputmask.originalPlaceholder);
     }
@@ -598,10 +594,7 @@ var EventHandlers = {
     inputmask.clicked++;
 
     const input = this;
-    if (
-      (input.inputmask.shadowRoot || input.ownerDocument).activeElement ===
-      input
-    ) {
+    if (input.getRootNode().activeElement === input) {
       const newCaretPosition = determineNewCaretPosition.call(
         inputmask,
         caret.call(inputmask, input),
@@ -700,10 +693,7 @@ var EventHandlers = {
       { showMaskOnHover } = inputmask.opts,
       input = this;
     inputmask.mouseEnter = true;
-    if (
-      (input.inputmask.shadowRoot || input.ownerDocument).activeElement !==
-      input
-    ) {
+    if (input.getRootNode().activeElement !== input) {
       const bufferTemplate = (
         inputmask.isRTL
           ? getBufferTemplate.call(inputmask).slice().reverse()

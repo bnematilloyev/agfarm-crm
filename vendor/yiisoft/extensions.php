@@ -66,15 +66,6 @@ return array (
       '@dmstr' => $vendorDir . '/dmstr/yii2-adminlte-asset',
     ),
   ),
-  'yiisoft/yii2-httpclient' => 
-  array (
-    'name' => 'yiisoft/yii2-httpclient',
-    'version' => 'dev-master',
-    'alias' => 
-    array (
-      '@yii/httpclient' => $vendorDir . '/yiisoft/yii2-httpclient/src',
-    ),
-  ),
   'himiklab/yii2-recaptcha-widget' => 
   array (
     'name' => 'himiklab/yii2-recaptcha-widget',
@@ -212,22 +203,31 @@ return array (
       '@yii2mod/swagger' => $vendorDir . '/yii2mod/yii2-swagger',
     ),
   ),
-  'yiisoft/yii2-bootstrap4' => 
+  'sadovojav/yii2-ckeditor' => 
   array (
-    'name' => 'yiisoft/yii2-bootstrap4',
-    'version' => '2.0.11.0',
-    'alias' => 
-    array (
-      '@yii/bootstrap4' => $vendorDir . '/yiisoft/yii2-bootstrap4/src',
-    ),
-  ),
-  'yiisoft/yii2-faker' => 
-  array (
-    'name' => 'yiisoft/yii2-faker',
+    'name' => 'sadovojav/yii2-ckeditor',
     'version' => 'dev-master',
     'alias' => 
     array (
-      '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker/src',
+      '@sadovojav/ckeditor' => $vendorDir . '/sadovojav/yii2-ckeditor',
+    ),
+  ),
+  'yiisoft/yii2-httpclient' => 
+  array (
+    'name' => 'yiisoft/yii2-httpclient',
+    'version' => 'dev-master',
+    'alias' => 
+    array (
+      '@yii/httpclient' => $vendorDir . '/yiisoft/yii2-httpclient/src',
+    ),
+  ),
+  'yiisoft/yii2-bootstrap4' => 
+  array (
+    'name' => 'yiisoft/yii2-bootstrap4',
+    'version' => '2.0.12.0',
+    'alias' => 
+    array (
+      '@yii/bootstrap4' => $vendorDir . '/yiisoft/yii2-bootstrap4/src',
     ),
   ),
   'yiisoft/yii2-debug' => 
@@ -239,22 +239,13 @@ return array (
       '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
     ),
   ),
-  'yiisoft/yii2-swiftmailer' => 
+  'yiisoft/yii2-faker' => 
   array (
-    'name' => 'yiisoft/yii2-swiftmailer',
+    'name' => 'yiisoft/yii2-faker',
     'version' => 'dev-master',
     'alias' => 
     array (
-      '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
-    ),
-  ),
-  'yiisoft/yii2-jui' => 
-  array (
-    'name' => 'yiisoft/yii2-jui',
-    'version' => 'dev-master',
-    'alias' => 
-    array (
-      '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui/src',
+      '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker/src',
     ),
   ),
   'yiisoft/yii2-gii' => 
@@ -266,13 +257,22 @@ return array (
       '@yii/gii' => $vendorDir . '/yiisoft/yii2-gii/src',
     ),
   ),
-  'sadovojav/yii2-ckeditor' => 
+  'yiisoft/yii2-jui' => 
   array (
-    'name' => 'sadovojav/yii2-ckeditor',
+    'name' => 'yiisoft/yii2-jui',
     'version' => 'dev-master',
     'alias' => 
     array (
-      '@sadovojav/ckeditor' => $vendorDir . '/sadovojav/yii2-ckeditor',
+      '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui/src',
+    ),
+  ),
+  'yiisoft/yii2-swiftmailer' => 
+  array (
+    'name' => 'yiisoft/yii2-swiftmailer',
+    'version' => 'dev-master',
+    'alias' => 
+    array (
+      '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
     ),
   ),
 );

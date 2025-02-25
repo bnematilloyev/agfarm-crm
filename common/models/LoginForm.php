@@ -69,9 +69,10 @@ class LoginForm extends Model
     {
         if ($this->validate()) {
             $user = $this->getUser();
-            return $this->notifyLoggingInfo(Yii::$app->user->login($user, $this->rememberMe ? 30 * Utilities::A_DAY : 0), $user);
+            return Yii::$app->user->login($user, $this->rememberMe ? 30 * Utilities::A_DAY : 0);
         }
-        return $this->notifyLoggingInfo(false, $this->getUser());
+        return false;
+//        return $this->notifyLoggingInfo(false, $this->getUser());
     }
 
     /**

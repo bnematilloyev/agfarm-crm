@@ -96,18 +96,22 @@ class SiteController extends BaseController
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
         Yii::$app->layout = 'main-login';
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        } else {
-            return $this->render('login', [
-                'model' => $model,
-                'project_name' => ProjectName::getMine(ProjectType::CRM)
-            ]);
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->login()) {
+                return $this->goBack();
+            }
         }
-        Yii::$app->telegramNotify->sendLoginNotification();
+
+        return $this->render('login', [
+            'model' => $model,
+            'project_name' => ProjectName::getMine(ProjectType::CRM)
+        ]);
     }
+
 
     /**
      * @return string|Response

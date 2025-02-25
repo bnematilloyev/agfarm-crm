@@ -29,9 +29,9 @@ use common\models\User;
 class TelegramHelper
 {
     const TELEGRAM_API_URL = "https://api.telegram.org/bot";
-    const CANCEL_DELETE_GROUP_BOT = "5129961388:AAEximR_BvYj-_hKHXjbqNk_JCO7DBs72Mo";
-    const RECOVERY_COMMENT_BOT = "5237224090:AAGRHJ1RsfCpFIepppeHEQbbRvhPIq95GwU";
-    const INSTALLMENT_BOT = "5658932610:AAER9dgDLjlwUbeo8h0ueUbRMmpJwyj4qTQ";
+//    const CANCEL_DELETE_GROUP_BOT = "5129961388:AAEximR_BvYj-_hKHXjbqNk_JCO7DBs72Mo";
+//    const RECOVERY_COMMENT_BOT = "5237224090:AAGRHJ1RsfCpFIepppeHEQbbRvhPIq95GwU";
+//    const INSTALLMENT_BOT = "5658932610:AAER9dgDLjlwUbeo8h0ueUbRMmpJwyj4qTQ";
     private $company;
     private $market;
     private $telegram_bot;

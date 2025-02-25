@@ -87,8 +87,8 @@ function mask() {
             ? this.inputmask.unmaskedvalue()
             : getLastValidPosition.call(inputmask) !== -1 ||
               opts.nullable !== true
-            ? (this.inputmask.shadowRoot || this.ownerDocument)
-                .activeElement === this && opts.clearMaskOnLostFocus
+            ? this.getRootNode().activeElement === this &&
+              opts.clearMaskOnLostFocus
               ? (inputmask.isRTL
                   ? clearOptionalTail
                       .call(inputmask, getBuffer.call(inputmask).slice())
@@ -284,14 +284,13 @@ function mask() {
 
     getBufferTemplate.call(inputmask).join(""); // initialize the buffer and getmasklength
     inputmask.undoValue = inputmask._valueGet(true);
-    const activeElement = (el.inputmask.shadowRoot || el.ownerDocument)
-      .activeElement;
+    const activeElement = el.getRootNode().activeElement;
     if (
       el.inputmask._valueGet(true) !== "" ||
       opts.clearMaskOnLostFocus === false ||
       activeElement === el
     ) {
-      applyInputValue(el, el.inputmask._valueGet(true), opts);
+      applyInputValue(el, el.inputmask._valueGet(true));
       let buffer = getBuffer.call(inputmask).slice();
       if (isComplete.call(inputmask, buffer) === false) {
         if (opts.clearIncomplete) {
@@ -319,6 +318,8 @@ function mask() {
           el,
           seekNext.call(inputmask, getLastValidPosition.call(inputmask))
         );
+      } else {
+        caret.call(inputmask, el, 0);
       }
     }
   }

@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'image',
                 'format' => 'html',
                 'value' => function ($model) {
-                    return Html::img(Yii::getAlias('@assets_url/brand') . $model->image, ['width' => '200px']);
+                    return Html::img(Yii::getAlias('@assets_url/brand/image') . $model->image, ['width' => '200px']);
                 },
                 'filter' => false,
             ],

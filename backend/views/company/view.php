@@ -32,7 +32,7 @@ YiiAsset::register($this);
 
 <div class="content with-padding padding-bottom-0 company-content">
     <div class="" style="display:flex;justify-content: center;align-items: center; padding: 20px">
-        <img src="/images/company-logo.jpg" class="img-rounded" alt="logo">
+        <img src="/images/grand_logo.png" class="img-rounded" alt="logo">
     </div>
     <?= DetailView::widget([
         'model' => $model,

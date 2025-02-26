@@ -39,7 +39,7 @@ $langs = [
 
                     <!-- Logo -->
                     <div id="logo" style="border-left: 1px solid silver">
-                        <a href="/"> <img src="/images/crm-logo.jpg" alt="logo " width="100"></a>
+                        <a href="/"> <img src="/images/grand_logo.png" alt="logo " width="100"></a>
                     </div>
 
                     <!-- Main Navigation -->

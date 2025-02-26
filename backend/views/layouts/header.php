@@ -115,7 +115,7 @@ $langs = [
                                 <a href="#" class="h-100 d-flex align-items-center">
                                     <div class="user-avatar status-online">
                                         <img
-                                                src="<?= Yii::getAlias('@assets_url/user/no-photo.png') ?>"
+                                                src="<?= Yii::getAlias('@assets_url/user'. Yii::$app->user->identity->image) ?>"
                                                 alt="<?= Yii::$app->user->identity->full_name ?>">
                                     </div>
                                     <div class="user-name"

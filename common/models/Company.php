@@ -78,6 +78,7 @@ class Company extends BaseTimestampedModel
             'name' => Yii::t('app', 'Name'),
             'address' => Yii::t('app', 'Address'),
             'status' => Yii::t('app', 'Status'),
+            'phone' => Yii::t('app', 'Phone'),
             'key' => Yii::t('app', 'Key'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),

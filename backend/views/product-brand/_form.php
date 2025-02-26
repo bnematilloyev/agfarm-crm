@@ -27,16 +27,16 @@ use yii\widgets\ActiveForm;
                             <?= $form->field($model, 'image')->widget(\sultonov\cropper\CropperWidget::className(), [
                                 'uploadUrl' => Url::toRoute('/product-brand/upload-photo'),
                                 'prefixUrl' => Yii::getAlias('@assets_url/brand/image/'),
-                                'width' => 70,
-                                'height' => 70
+                                'width' => 225,
+                                'height' => 225
                             ]) ?>
                         </div>
                         <div class="col-md-6">
                             <?= $form->field($model, 'wallpaper')->widget(\sultonov\cropper\CropperWidget::className(), [
                                 'uploadUrl' => Url::toRoute('/product-brand/upload-wallpaper'),
                                 'prefixUrl' => Yii::getAlias('@assets_url/brand/wallpaper/'),
-                                'width' => 70,
-                                'height' => 70
+                                'width' => 2000,
+                                'height' => 700
                             ]) ?>
                         </div>
                     </div>

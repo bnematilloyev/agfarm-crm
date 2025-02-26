@@ -48,7 +48,7 @@ class CurrencyType extends BaseTimestampedModel
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
-            'slug' => Yii::t('app', 'Slug name'),
+            'slug' => Yii::t('app', 'Slug'),
             'value' => Yii::t('app', 'Value'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),

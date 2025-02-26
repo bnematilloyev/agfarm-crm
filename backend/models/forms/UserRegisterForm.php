@@ -161,7 +161,7 @@ class UserRegisterForm extends Model
             $transaction->commit();
             $this->id = $user->id;
 
-            return Customer::createOrUpdateYourSelf($user);
+            return true;
 
         } catch (\Exception $e) {
             $transaction->rollBack();

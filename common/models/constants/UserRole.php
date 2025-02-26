@@ -31,7 +31,6 @@ class UserRole
 
         if (\Yii::$app->user->identity->is_creator)
             return [
-                self::ROLE_GUEST => self::getString(self::ROLE_GUEST),
                 self::ROLE_EMPLOYEE => self::getString(self::ROLE_EMPLOYEE),
                 self::ROLE_ADMIN => self::getString(self::ROLE_ADMIN),
                 self::ROLE_SUPER_ADMIN => self::getString(self::ROLE_SUPER_ADMIN),
@@ -40,7 +39,6 @@ class UserRole
             ];
 
         return [
-            self::ROLE_GUEST => self::getString(self::ROLE_GUEST),
             self::ROLE_EMPLOYEE => self::getString(self::ROLE_EMPLOYEE),
             self::ROLE_ADMIN => self::getString(self::ROLE_ADMIN),
         ];

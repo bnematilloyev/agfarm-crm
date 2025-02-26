@@ -749,6 +749,7 @@ return [
     'Yil davomida sotilgan eng top smartfonlar' => 'The best smartphones sold during the year',
     'Product Collections' => '',
     'Products-analyse' => '',
+    'Product Brands' => '',
     'Profit' => '',
     'Profit Usd' => '',
     'Profit Uzs' => '',

@@ -432,6 +432,7 @@ return [
     'Products' => 'Mahsulotlar',
     'Product Collections' => 'Mahsulotlar kollektsiyalari',
     'Products-analyse' => 'Mahsulotlar tahlili',
+    'Product Brands' => 'Mahsulot brendlari',
     'Part time job' => 'Yarim-stavkali ish',
     'Profit' => 'Foyda',
     'Project Type' => 'Loyiha turi',

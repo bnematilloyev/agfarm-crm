@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var common\models\ProductBrand $model */
 
-$this->title = $model->id;
+$this->title = $model->{'name_'.Yii::$app->language};
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Product Brands'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -36,6 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'name_uz',
+            'name_ru',
+            'name_en',
             'slug',
             [
                 'attribute' => 'image',
@@ -52,7 +54,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             'home_page:boolean',
-            'meta_json_uz',
             [
                 'attribute' => 'status',
                 'value' => function ($model) {
@@ -66,9 +67,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Html::a($model->official_link, $model->official_link, ['target' => '_blank']);
                 }
             ],
-            'name_ru',
+            'meta_json_uz',
             'meta_json_ru',
-            'name_en',
             'meta_json_en',
             'created_at:datetime',
             'updated_at:datetime',

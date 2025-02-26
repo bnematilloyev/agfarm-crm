@@ -1465,6 +1465,7 @@ return [
     'Currency ID' => 'ID Валюта',
     'with products' => 'с товарами',
     'Product name' => 'Наименование товара',
+    'Product Brands' => 'Бренд продукции',
     'Identity Imeis' => 'Imei Личность',
     'First Imei' => 'Imei 1',
     'Second Imei' => 'Imei 2',

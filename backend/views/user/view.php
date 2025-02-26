@@ -57,11 +57,20 @@ $admin = Yii::$app->user->identity;
                             ]);
                         } ?>
                     <?php } ?>
+                    <?= Html::a(Yii::t('app', 'Change Avatar'), ['photo', 'id' => $model->id], ['class' => 'd-inline ml-5 button ripple-effect blue mt-5']) ?>
                 </div>
             </div>
         </div>
         <div class="col-12">
             <div class="row card__box" style="box-shadow: none">
+                <div class="col-12 col-xl-3 profil-name-img">
+                    <a href="<?= Yii::getAlias('@assets_url/user') . $model->image ?>" data-fancybox="images"
+                       data-caption="<?= $model->full_name ?>">
+                        <?= Html::img(Yii::getAlias('@assets_url/user') . $model->image) ?>
+                        <h2><?= Html::encode($this->title) ?></h2>
+                        <h3><?= $model->roleName ?> <?= isset($model->department) ? "(" . $model->department->name . ")" : "" ?></h3>
+                    </a>
+                </div>
                 <div class="col-12 col-xl-9 mt-15 mt-xl-0">
                     <div>
                         <table class="table w-100">

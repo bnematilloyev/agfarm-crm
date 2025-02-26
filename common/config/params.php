@@ -11,7 +11,7 @@ return [
     'dashboardUrl' => 'http://api.agfarm.uz/v1/dashboard',
     'v1ApiUrl' => 'http://api.agfarm.uz/v1/',
 //    'firebaseApiAccessKey' => 'AAAADfbgjyU:APA91bGtNJjTsLgd7e6YOy2aJp1A_4R-GrMl70K-JEHDArgaNzVo12yGV_SvjkpotKLOzatHr9ZaqdociwfSC3Mc7ZZVvsgdsjcE0VaawyKHNPk-sJTURRJU3q02hQLV0PkE6HEkMfZl',
-//    'isCreator' => "$2y$13$3XjJtveL6IU5kjKJYXTW8uY0yHs.NpZUeS5qI.OdSD49SlgfQMs9i",
+    'isCreator' => "$2y$13$3XjJtveL6IU5kjKJYXTW8uY0yHs.NpZUeS5qI.OdSD49SlgfQMs9i",
 //    'customerKey' => 'TsLgd7e6YOy2aJ',
 //    'hatico-token' => 'APA91bGtNJjTsLgd7e6YOy2aJp1A_4R',
 //    'admin_phones' => ["+998941541995", "+998931773977", "+998900220114", "+998939404393", "+998936534451"],

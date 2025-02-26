@@ -31,7 +31,7 @@ use yii\db\Exception;
  * @property string $password write-only password
  * @property string $confirm_password
  * @property bool $change_password
- *
+ * @property string $image
  * @property User $identity
  * @property Market $market
  * @property Company $company
@@ -46,6 +46,7 @@ class UserRegisterForm extends Model
     public $role;
     public $status;
     public $password;
+    public $image;
     public $confirm_password;
     public $change_password;
 
@@ -60,7 +61,7 @@ class UserRegisterForm extends Model
             ['status', 'default', 'value' => UserStatus::STATUS_INACTIVE],
             ['role', 'default', 'value' => UserRole::ROLE_GUEST],
             ['status', 'in', 'range' => [UserStatus::STATUS_ACTIVE, UserStatus::STATUS_DELETED, UserStatus::STATUS_INACTIVE]],
-            [['full_name', 'phone'], 'string', 'max' => 255],
+            [['full_name', 'phone', 'image'], 'string', 'max' => 255],
             [['phone'], 'match', 'pattern' => '/((\+998)|0)[-]?[0-9]{9}/'],
             ['confirm_password', 'compare', 'compareAttribute' => 'password', 'message' => 'Parollar bir-biriga mos kelmaydi'],
             ['phone', 'unique', 'targetClass' => User::className(),
@@ -102,6 +103,7 @@ class UserRegisterForm extends Model
             'confirm_password' => Yii::t('app', 'Confirm Password'),
             'password_hash' => Yii::t('app', 'Password Hash'),
             'password_reset_token' => Yii::t('app', 'Password Reset Token'),
+            'image' => Yii::t('app', 'Image'),
             'phone' => Yii::t('app', 'Phone'),
             'role' => Yii::t('app', 'Role'),
             'status' => Yii::t('app', 'Status'),
@@ -126,6 +128,7 @@ class UserRegisterForm extends Model
         $form->status = $user->status;
         $form->password = $user->password_hash;
         $form->confirm_password = $user->password_hash;
+        $form->image = $user->image;
         return $form;
     }
 
@@ -143,6 +146,7 @@ class UserRegisterForm extends Model
             $user->status = $this->status;
             $user->market_id = $this->market_id;
             $user->full_name = $this->full_name;
+            $user->image = $this->image;
             $user->role = $this->role;
             $user->setPassword($this->password);
             $user->generateAuthKey();
@@ -188,6 +192,7 @@ class UserRegisterForm extends Model
         $user->generateAuthKey();
         $user->generatePasswordResetToken();
         $user->updated_at = time();
+        $user->image = $this->image;
         if (!$user->save()) {
             ob_start();
             var_dump($user->errors);

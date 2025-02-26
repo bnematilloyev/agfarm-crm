@@ -179,6 +179,20 @@ class UserController extends BaseController
         return $this->redirect(['index']);
     }
 
+    public function actionPhoto($id)
+    {
+        $user = $this->findModel($id);
+        $userRegisterForm = UserRegisterForm::getForm($user);
+
+        if ($userRegisterForm->load(Yii::$app->request->post()) && $userRegisterForm->validate() && $userRegisterForm->update($user)) {
+            return $this->redirect(['view', 'id' => $user->id]);
+        }
+
+        return $this->render('photo', [
+            'model' => $userRegisterForm,
+        ]);
+    }
+
 
     /**
      * Finds the User model based on its primary key value.

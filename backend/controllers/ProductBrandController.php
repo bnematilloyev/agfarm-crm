@@ -91,12 +91,19 @@ class ProductBrandController extends Controller
         $model = new ProductBrand();
 
         if ($model->load(Yii::$app->request->post()) && Yii::$app->request->isPost) {
-           $model->slug = Utilities::slugify($model->name_uz);
-           $model->meta_json_uz = json_encode(array('description' => Utilities::charLimiter($model->description_uz, 30), 'keywords' => $model->name_uz));
-           $model->meta_json_ru = json_encode(array('description' => Utilities::charLimiter($model->description_ru, 30), 'keywords' => $model->name_ru));
-           $model->meta_json_en = json_encode(array('description' => Utilities::charLimiter($model->description_en, 30), 'keywords' => $model->name_en));
-           if ($model->save())
-               return $this->redirect(['view', 'id' => $model->id]);
+            $model->slug = Utilities::slugify($model->name_uz);
+
+            $description_uz = mb_substr(strip_tags($model->description_uz), 0, 100, 'UTF-8');
+            $description_ru = mb_substr(strip_tags($model->description_ru), 0, 100, 'UTF-8');
+            $description_en = mb_substr(strip_tags($model->description_en), 0, 100, 'UTF-8');
+
+            $model->meta_json_uz = json_encode(['description' => $description_uz, 'keywords' => $model->name_uz], JSON_UNESCAPED_UNICODE);
+            $model->meta_json_ru = json_encode(['description' => $description_ru, 'keywords' => $model->name_ru], JSON_UNESCAPED_UNICODE);
+            $model->meta_json_en = json_encode(['description' => $description_en, 'keywords' => $model->name_en], JSON_UNESCAPED_UNICODE);
+
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('create', [

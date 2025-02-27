@@ -67,6 +67,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Html::a($model->official_link, $model->official_link, ['target' => '_blank']);
                 }
             ],
+            'description_uz',
+            'description_ru',
+            'description_en',
             'meta_json_uz',
             'meta_json_ru',
             'meta_json_en',

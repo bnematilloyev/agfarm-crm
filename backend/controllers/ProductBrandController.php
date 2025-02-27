@@ -128,15 +128,26 @@ class ProductBrandController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $oldImage = $model->image;
+        $oldWallpaper = $model->wallpaper;
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
+            $newImage = Yii::$app->request->post('ProductBrand')['image'] ?? null;
+            $newWallpaper = Yii::$app->request->post('ProductBrand')['wallpaper'] ?? null;
+
+            $model->image = $newImage ?: $oldImage;
+            $model->wallpaper = $newWallpaper ?: $oldWallpaper;
+
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [
             'model' => $model,
         ]);
     }
+
 
     /**
      * Deletes an existing ProductBrand model.

@@ -10,6 +10,7 @@ use sultonov\cropper\actions\UploadAction;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ProductBrandController implements the CRUD actions for ProductBrand model.
@@ -101,8 +102,13 @@ class ProductBrandController extends Controller
             $model->meta_json_ru = json_encode(['description' => $description_ru, 'keywords' => $model->name_ru], JSON_UNESCAPED_UNICODE);
             $model->meta_json_en = json_encode(['description' => $description_en, 'keywords' => $model->name_en], JSON_UNESCAPED_UNICODE);
 
+            $model->image = Yii::$app->request->post('ProductBrand')['image'] ?? null;
+            $model->wallpaper = Yii::$app->request->post('ProductBrand')['wallpaper'] ?? null;
+
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                Yii::error($model->getErrors(), 'upload');
             }
         }
 
@@ -110,6 +116,7 @@ class ProductBrandController extends Controller
             'model' => $model,
         ]);
     }
+
 
     /**
      * Updates an existing ProductBrand model.
